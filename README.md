@@ -1,7 +1,7 @@
 # 极简概率导论
 
-![code size](https://img.shields.io/github/languages/code-size/ivaquero/book-prob-intro.svg)
-![repo size](https://img.shields.io/github/repo-size/ivaquero/book-prob-intro.svg)
+![code size](https://img.shields.io/github/languages/code-size/ivaquero/book-probability.svg)
+![repo size](https://img.shields.io/github/repo-size/ivaquero/book-probability.svg)
 
 本仓库基于我一直在迭代的概率导论教案，目标是希望其具有如下特点
 
