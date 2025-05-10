@@ -1,0 +1,13 @@
+*
+!*.*
+!*/
+
+# General
+.DS_Store
+
+# Thumbnails
+._*
+
+articles
+images
+test.*
