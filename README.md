@@ -49,8 +49,8 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 ```toml
 [key-you-like]
     author = "ivaquero"
-    footer-cap = "ivaquero"
-    header-cap = "Reinforcement Learning"
+    footer = "ivaquero"
+    header = "Reinforcement Learning"
     lang = "en"
 ```
 
