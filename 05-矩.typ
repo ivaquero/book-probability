@@ -1,10 +1,7 @@
 #import "lib/lib.typ": *
-#show: qooklet.with(
+#show: chapter-style.with(
   title: "矩",
-  author: "Yāng Xīnbīn",
-  footer-cap: "Yāng Xīnbīn",
-  header-cap: "极简概率导论",
-  lang: "zh",
+  info: info,
 )
 
 = 中数与众数
@@ -86,7 +83,6 @@
 #figure(
   image("images/trials/metric-sem.png", width: 50%),
   caption: "样本的均值、方差和标准差",
-  supplement: "图",
 )
 
 设样本的期望为$μ$，则
@@ -299,6 +295,6 @@ $
 
 这是 $𝒩(μ_1 + μ_2, σ_1^2 + σ_2^2)$ 的 MGF。
 
-#theorem("Cramér's 定理")[
+#theorem(title: "Cramér's 定理")[
   若$X_1$和$X_2$相互独立，且$X_1 + X_2$是正态分布，则$X_1$和$X_2$必为正态分布。
 ]

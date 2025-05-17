@@ -1,10 +1,7 @@
 #import "lib/lib.typ": *
-#show: qooklet.with(
+#show: chapter-style.with(
   title: "期望与方差",
-  author: "Yāng Xīnbīn",
-  footer-cap: "Yāng Xīnbīn",
-  header-cap: "极简概率导论",
-  lang: "zh",
+  info: info,
 )
 
 = 期望
@@ -58,7 +55,7 @@
 
 在概率论与统计学中，若知道随机变量$X$的概率分布，但并不显式地知道函数$g(X)$的分布，则无意识统计学家法则（Law of the Unconscious Statistician，LOTUS）就是一个可用来计算关于随机变量$X$的函数$g(X)$之期望的定理。该法则的具体形式依赖于随机变量$X$之概率分布的描述形式。
 
-#theorem("LOTUS")[
+#theorem(title: "LOTUS")[
   若$X$是离散随机变量，$g(X)$是一个$ℝ → ℝ$的函数，则
   $ 𝔼[g(X)] = ∑_x g(X) P(X=x) $
 ]
@@ -113,7 +110,6 @@ $
 #figure(
   image("images/distrs/distr_poisson_pmf.png", width: 40%),
   caption: "Poisson 分布",
-  supplement: "图",
 )
 
 #theorem[

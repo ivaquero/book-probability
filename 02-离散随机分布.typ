@@ -1,10 +1,7 @@
 #import "lib/lib.typ": *
-#show: qooklet.with(
+#show: chapter-style.with(
   title: "离散随机分布",
-  author: "Yāng Xīnbīn",
-  footer-cap: "Yāng Xīnbīn",
-  header-cap: "极简概率导论",
-  lang: "zh",
+  info: info,
 )
 
 = 随机变量
@@ -32,7 +29,7 @@
   注意，若$x$是$X$的支撑集，则为正值，否则为$0$。
 ]
 
-#theorem("有效 PMFs")[
+#theorem(title: "有效 PMFs")[
   设离散随机变量$X$的支撑集为$x_1, x_2$，$X$的 PMF $p_X$必须满足以下两个条件：
 
   + 非负的：$p_X (x) > O "if" x = 2; "for some" j, "else" p_X (x) = 0$
@@ -272,7 +269,7 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
 
 #let data = csv("data/dstr-discrete.csv")
 #figure(
-  ktable(data, 5, inset: 0.33em),
+  tableq(data, 5, inset: 0.33em),
   caption: "主要离散分布关系",
   supplement: "表",
   kind: table,

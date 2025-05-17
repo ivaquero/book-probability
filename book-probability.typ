@@ -1,3 +1,8 @@
+#import "lib/lib.typ": *
+
+#cover(info)
+#contents(depth: 1, info: info)
+
 #let chapter(filename) = {
   include filename
   context counter(heading).update(0)

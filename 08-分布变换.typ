@@ -1,10 +1,7 @@
 #import "lib/lib.typ": *
-#show: qooklet.with(
+#show: chapter-style.with(
   title: "分布变换",
-  author: "Yāng Xīnbīn",
-  footer-cap: "Yāng Xīnbīn",
-  header-cap: "极简概率导论",
-  lang: "zh",
+  info: info,
 )
 
 = 变量的变化
@@ -82,7 +79,6 @@ $
 #figure(
   image("images/trials/sum-conv-unif.png", width: 40%),
   caption: "均匀分布的卷积",
-  supplement: "图",
 )
 
 #figure(
@@ -90,7 +86,7 @@ $
     columns: 2,
     align: center + horizon,
     inset: 5.5pt,
-    stroke: three-line(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     [$X_i$], [$∑X_i$],
     [$"Bin"(n_i, p)$], [$"Bin"(∑ n_i, p)$],
     [$𝒩(μ_i, σ_i^2)$], [$𝒩(∑ μ_i, ∑ σ_i^2)$],
@@ -136,7 +132,7 @@ Beta 分布 PDF 关于参数$(a, b)$有如下性质：
 
 == 与二项分布
 
-#theorem("Beta-二项共轭")[
+#theorem(title: "Beta-二项共轭")[
   若先验分布服从 Beta 分布，即$p ∼ "Beta"(a, b)$，且数据条件服从二项分布，即$X|p ∼ "Bin"(n, p)$，则后验仍服从 Beta 分布
   $ p|X = k ∼ "Beta"(a + k, b + n - k) $
   此时，称 Beta 分布是二项分布的共轭先验。$X$的边际分布称 Beta-二项分布。
@@ -169,7 +165,7 @@ Gamma 分布是正实数域的连续分布，是指数分布的泛化。指数�
 
 $ Γ(a) = ∫_0^∞ x^(a - 1) e^(-x) dd(x), quad ∀ a > 0 $
 
-#theorem("Gamma 函数的递归性")[
+#theorem(title: "Gamma 函数的递归性")[
   $ Γ(a + 1) = a Γ(a) $
 ]
 
@@ -177,7 +173,7 @@ $ Γ(a) = ∫_0^∞ x^(a - 1) e^(-x) dd(x), quad ∀ a > 0 $
   $ Γ(a) = (a - 1)! $
 ]
 
-#theorem("余元公式")[
+#theorem(title: "余元公式")[
   $ Γ(1 - a) Γ(a) = frac(π, sin (π x)) $
 ]
 
@@ -213,7 +209,7 @@ Gamma 分布可以衍生出多个其他连续分布
 - $"Gamma"(n / 2, 2) = χ^2(n)$
 - $"Gamma"(1 / 2, 2) ∼ 𝒩(0, 1)$
 
-#theorem("Gamma-Poisson 共轭")[
+#theorem(title: "Gamma-Poisson 共轭")[
   若先验分布服从 Gamma 分布，即$λ ∼ "Gamma"(r_0, b_0)$，且数据条件服从 Poisson 分布，即$Y|λ ∼ "Poisson"(λ t)$，则后验仍服从 Gamma 分布
   $ λ|Y ∼ "Gamma"(r_0 + y, b_0 + t) $
   此时，称 Gamma 分布是 Poisson 分布的共轭先验。$Y$的边际分布称 Gamma-Poisson 分布。
@@ -282,7 +278,7 @@ $ U_((j)) ∼ "Beta"(j, n − j + 1) $
     columns: 3,
     align: center + horizon,
     inset: 0.4em,
-    stroke: three-line(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     table.header([*分布*], [*共轭先验*], [*标准化*]),
     [Binomial-$p$], [Beta], [Bernoulli],
     [NBinomial-$p$], [Beta], [Geometric],

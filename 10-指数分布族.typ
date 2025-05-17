@@ -1,10 +1,7 @@
 #import "lib/lib.typ": *
-#show: qooklet.with(
+#show: chapter-style.with(
   title: "指数分布族",
-  author: "Yāng Xīnbīn",
-  footer-cap: "Yāng Xīnbīn",
-  header-cap: "极简概率导论",
-  lang: "zh",
+  info: info,
 )
 
 = 熵
@@ -107,7 +104,6 @@ $ p_1 = p_2 = ⋯ = p_k = 1 / k $
     width: 70%,
   ),
   caption: "熵",
-  supplement: "图",
 )
 
 简言之，熵与不确定性有关。一个比较分散或扁平的先验分布是一个信息量较小的分布。这不仅在直观上是正确的，且有熵的概念的理论支持。我们希望找到尽可能大的熵（最小信息量）的分布，但也要考虑到我们的问题所定义的约束。这是一个可用数学方法解决的优化问题
@@ -259,7 +255,7 @@ $ A(η) = -frac(η_1^2, 4 η_2) + 1 / 2 log(-π / η_2) $
     columns: 6,
     align: center + horizon,
     inset: 0.7em,
-    stroke: three-line(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     table.header([分布], [$θ$], [$η$], [$h(x)$], [$T(x)$]),
     [$A(θ)$], [Bernoulli], [$p$], [$log p / (1-p)$], [$1$], [$x$],
     [$-log(1-p)$], [二项], [$p$], [$log p / (1-p)$], [$n / x$], [$x$],
@@ -281,5 +277,4 @@ $ A(η) = -frac(η_1^2, 4 η_2) + 1 / 2 log(-π / η_2) $
     [$log Γ(ν / 2) + ν / 2 log 2$],
   ),
   caption: "指数分布族",
-  supplement: "图",
 )

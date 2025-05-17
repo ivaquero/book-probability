@@ -1,10 +1,7 @@
 #import "lib/lib.typ": *
-#show: qooklet.with(
+#show: chapter-style.with(
   title: "连续随机分布",
-  author: "Yāng Xīnbīn",
-  footer-cap: "Yāng Xīnbīn",
-  header-cap: "极简概率导论",
-  lang: "zh",
+  info: info,
 )
 
 = 连续随机变量
@@ -182,7 +179,7 @@ $
   caption: "正态分布",
 )
 
-#theorem("68-95-99.7% 法则")[
+#theorem(title: "68-95-99.7% 法则")[
   若$X ∼ 𝒩(μ, σ)$，则
 
   $

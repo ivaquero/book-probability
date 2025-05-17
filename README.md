@@ -35,8 +35,32 @@ git clone --depth 1 --branch main https://github.com/typst/packages typst
 ### 使用模版
 
 ```typst
-#import "@preview/qooklet:0.2.1": *
+#import "@preview/qooklet:0.4.0": *
+#show: chapter-style.with(
+  title: "Bellman Eqation",
+  // the following are optional arguments
+  // info: none
+  // outline-on: false,
+)
 ```
+
+这里参数 `info` 让你可以使用一个 TOML 文件传入你的文档信息（使用默认值，意味着下列信息为空）。TOML 文件格式如下
+
+```toml
+[key-you-like]
+    author = "ivaquero"
+    footer-cap = "ivaquero"
+    header-cap = "Reinforcement Learning"
+    lang = "en"
+```
+
+使用如下语句读取你的 TOML 文件
+
+```typst
+#let info = toml("your path").key-you-like
+```
+
+详情见 [qooklet](https://github.com/ivaquero/typst-qooklet)
 
 ## 约定规范
 

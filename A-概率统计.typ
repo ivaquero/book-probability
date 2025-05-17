@@ -1,10 +1,7 @@
 #import "lib/lib.typ": *
-#show: qooklet.with(
+#show: chapter-style.with(
   title: "附录A：概率统计",
-  author: "Yāng Xīnbīn",
-  footer-cap: "Yāng Xīnbīn",
-  header-cap: "极简概率导论",
-  lang: "zh",
+  info: info,
 )
 
 = 统计测度
@@ -18,7 +15,7 @@
     columns: 3,
     align: center + horizon,
     inset: 0.6em,
-    stroke: three-line(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     table.header([分布], [$𝔼[X]$], [$D(X)$]),
     [$"Bern"(p)$], [$p$], [$p(1 - p)$],
     [$"Bin"(n, p)$], [$n p$], [$n p(1 - p)$],

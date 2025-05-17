@@ -1,10 +1,7 @@
 #import "lib/lib.typ": *
-#show: qooklet.with(
+#show: chapter-style.with(
   title: "联合分布",
-  author: "Yāng Xīnbīn",
-  footer-cap: "Yāng Xīnbīn",
-  header-cap: "极简概率导论",
-  lang: "zh",
+  info: info,
 )
 
 = 联合、边际、条件分布
@@ -106,7 +103,7 @@ $X$的边际 PMF 是单独观察$X$时，$X$的 PMF。为了将联合 PMF 转换
     columns: 3,
     align: center + horizon,
     inset: 6.5pt,
-    stroke: three-line(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     table.header([], [$Y$离散], [$Y$连续], [$X$离散]),
     [$P(Y=y|X=x) = frac(P(X=x|Y=y) P(Y=y), P(X=x))$], [$f_Y (y|X=x) = frac(P(X=x|Y=y) f_Y (y), P(X=x))$], [$X$连续],
     [$P(Y=y|X=x) = frac(f_X (x|Y=y) P(Y=y), f_X (x))$], [$f_(Y|X)(y|x) = frac(f_(X|Y)(x|y) f_Y (y), f_X (x))$],
@@ -121,7 +118,7 @@ $X$的边际 PMF 是单独观察$X$时，$X$的 PMF。为了将联合 PMF 转换
     columns: 3,
     align: center,
     inset: 6.5pt,
-    stroke: three-line(rgb("000")),
+    stroke: table-three-line(rgb("000")),
     table.header([], [$Y$离散], [$Y$连续], [$X$离散]),
     [$∑_y P(X=x|Y=y) P(Y=y)$], [$∫_(-∞)^(∞) P(X=x|Y=y) f_Y (y) dd(y)$], [$X$连续],
     [$∑_y f_X (x|Y=y) P(Y=y)$], [$∫_(-∞)^(∞) f_(X|Y)(x|y) f_Y (y) dd(y)$],
@@ -205,7 +202,7 @@ $n$个对象中，每个对象都被独立归入$k$个类别之一。一个物�
   满足$∑n_i = n$。
 ]
 
-#theorem("多项式定理")[
+#theorem(title: "多项式定理")[
   $
     (∑_(i=1)^(m) a_(i))^(n) =
     ∑ binom(n, k_1\, k_2\, ⋯\, k_m) ∏_(t=1)^(m) a_t^(k_t)( a_(i) ∈ ℝ,
@@ -307,11 +304,11 @@ $ D_M (x) = ∑_(i=1)^p y_i^2 / λ_i $
   若$X ∼ "MVN"$可写成$𝑿 = (𝑿_1，𝑿_2)$，其中，$𝑿_1$和$𝑿_2$是子向量，且$𝑿_1$的每个分量都与$𝑿_2$的每个分量不相关，则$𝑿_1$和$𝑿_2$就是独立的。
 ]
 
-#theorem("样本均值与方差的独立性")[
+#theorem(title: "样本均值与方差的独立性")[
   设$X_1, … , X_n i.i.d. ∼ 𝒩(μ, σ^2)$，则$"Cov"(macron(X_n), S_n^2) = 0$
 ]
 
-#theorem("积分布")[
+#theorem(title: "积分布")[
   设$X ∼ "MVN"(μ_1, Σ_1)$，$Y ∼ "MVN"(μ_2, Σ_2)$，则积分布的参数为
   $
     μ = Σ_2 (Σ_1 + Σ_2)^(-1) μ_1 + Σ_1 (Σ_1 + Σ_2)^(-1) μ_2\
@@ -335,6 +332,6 @@ $
 
 其中，$ρ ∈ (-1, 1)$为相关系数，$τ = sqrt(1 − ρ^2)$。
 
-#theorem("和与差的独立性")[
+#theorem(title: "和与差的独立性")[
   设$X, Y i.i.d. ∼ 𝒩(0, 1)$，则$"Cov"(X + Y, X − Y) = 0$
 ]

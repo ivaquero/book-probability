@@ -1,10 +1,7 @@
 #import "lib/lib.typ": *
-#show: qooklet.with(
+#show: chapter-style.with(
   title: "概率与计数",
-  author: "Yāng Xīnbīn",
-  footer-cap: "Yāng Xīnbīn",
-  header-cap: "极简概率导论",
-  lang: "zh",
+  info: info,
 )
 
 = 集合
@@ -98,7 +95,7 @@ Cartian 幂：$n$元集合有$2^(n)-1$个子集，其$k$阶 Cartian 幂有$n^(k)
   考虑$n$个对象，并从它们中选出$k$个对象，每次选择后放回。则有$n^k$种可能的结果。
 ]
 
-#theorem("二项式定理")[
+#theorem(title: "二项式定理")[
   对$k ≤ n$，有
 
   $ binom(n, k) = frac(n(n-1)⋯(n-k+1), k!) = frac(n!, (n-k)!k!) $
@@ -163,7 +160,7 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
 - $A ⊆ B ⇒ P(A) < P(B)$
 - $P(A ∪ B) = P(A) + P(B) - P(A ∩ B)$
 
-#theorem("容斥原理")[
+#theorem(title: "容斥原理")[
   $
     P(U_(i=1)^n A_i) = ∑_i P(A_i)
     - ∑_(i < j) P(A_i ∩ A_j)
@@ -172,7 +169,7 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
   $
 ]
 
-#corollary("二元容斥原理")[
+#corollary(title: "二元容斥原理")[
   $ P(A Δ B) = P(A) + P(B) - 2P(A ∩ B) $
 ]
 
@@ -184,14 +181,14 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
   $ P(A|B) = frac(P(A ∩ B), P(B)) $
 ]
 
-#tip[
+#tip-box()[
   Conditioning is the soul of statistics.
   #align("-- <Introduction to Probability>", right)
 ]
 
 == Bayes' 法则
 
-#theorem("Bayes' 法则")[
+#theorem(title: "Bayes' 法则")[
   $ P(A|B) = frac(P(B|A)P(A), P(B)) $
 
   其中
@@ -233,11 +230,11 @@ $ <bayes>
   $ "odds"(A) = P(A) / P(overline(A)) $
 ]
 
-#theorem("Bayes' 法则的几率形式")[
+#theorem(title: "Bayes' 法则的几率形式")[
   $ frac(P(A|B), P(overline(A)|B)) = frac(P(B|A), P(B | overline(A))) frac(P(A), P(overline(A))) $
 ]
 
-#law("全概率定律")[
+#theorem(title: "全概率定律")[
   设$A_1, A_2, …, A_n$是样本空间 S 的分区，若$P(A_i) > 0$，$∀i$，有
 
   $ P(B) = ∑_(i=1)^n P(B|A_i) P(A_i) $
