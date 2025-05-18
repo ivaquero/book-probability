@@ -1,6 +1,6 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "附录A：概率统计",
+#show: appendix-style.with(
+  title: "概率统计",
   info: info,
 )
 
