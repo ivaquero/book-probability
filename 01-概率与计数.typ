@@ -56,13 +56,13 @@
       #list(
         [$A + B = A ∪ B$],
         [$A - B = A B^∁$],
-        [$A(B-C) = A B - A C$],
+        [$A (B-C) = A B - A C$],
         indent: 0.1em,
       )
     - Cartian 积
       #list(
         [$A × B = \{(x, y) |x ∈ A ∧ y ∈ B\}$],
-        [$A×∅ = ∅$],
+        [$A × ∅ = ∅$],
         indent: 0.1em,
       )
   ],
@@ -83,7 +83,7 @@ Cartian 幂：$n$元集合有$2^(n)-1$个子集，其$k$阶 Cartian 幂有$n^(k)
   假设 A 是有限样本空间 S 中的一个事件，A 的朴素概率（naive probability）为
 
   $
-    P_("naive")(A) = frac(|A|, |S|) = frac(ctext("事件A发生的次数"), ctext("S中所有事件发生的总次数"))
+    P_("naive")(A) = |A| / |S| = ctext("事件A发生的次数") / ctext("S中所有事件发生的总次数")
   $
 ]
 
@@ -151,7 +151,7 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
   + P(∅) = 0
   + P(S) = 1
   + 若$A_1, A_2, …$为独立（互斥）事件，则
-  $ P(U_(j=1)^(∞) A_j) = ∑_(j=1)^(∞) P(A_j) $
+  $ P(U_(j=1)^(∞) A_j) = sum_(j=1)^(∞) P(A_j) $
 ]
 
 == 概率的性质
@@ -162,9 +162,9 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
 
 #theorem(title: "容斥原理")[
   $
-    P(U_(i=1)^n A_i) = ∑_i P(A_i)
-    - ∑_(i < j) P(A_i ∩ A_j)
-    &+ ∑_(i < j < k) P(A_i ∩ A_j ∩ A_k)-⋯ \
+    P(U_(i=1)^n A_i) = sum_i P(A_i)
+    - sum_(i < j) P(A_i ∩ A_j)
+    &+ sum_(i < j < k) P(A_i ∩ A_j ∩ A_k)-⋯ \
     &+(-1)^(n+1) P(A_1 ∩ ⋯ ∩ A_n)
   $
 ]
@@ -201,7 +201,9 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
 实际应用中，A 对应某种原因，B 对应被观测到的现象，由此，上述公式可翻译为
 
 $
-  P( ctext("原因i|现象") ) = frac(P(ctext("原因i")) × P(ctext("现象|原因i")), P(ctext("现象"))) = ctext("先验") × ctext("标准化的似然")
+  P( ctext("原因i|现象") )
+  = frac(P(ctext("原因i")) × P(ctext("现象|原因i")), P(ctext("现象")))
+  = ctext("先验") × ctext("标准化的似然")
 $ <bayes>
 
 @bayes 告诉我们，信息推断同时考虑如下 2 个方面：
@@ -237,7 +239,7 @@ $ <bayes>
 #theorem(title: "全概率定律")[
   设$A_1, A_2, …, A_n$是样本空间 S 的分区，若$P(A_i) > 0$，$∀i$，有
 
-  $ P(B) = ∑_(i=1)^n P(B|A_i) P(A_i) $
+  $ P(B) = sum_(i=1)^n P(B|A_i) P(A_i) $
 ]
 
 == 额外条件
@@ -251,7 +253,7 @@ $ <bayes>
 #theorem[
   设$A_1, A_2, …, A_n$是样本空间 S 的分区，假设$P(A_i ∩ E)$，$∀i$，有
 
-  $ P(B|E) = ∑_(i=1)^n P(B|A_i, E) P(A_i|E) $
+  $ P(B|E) = sum_(i=1)^n P(B|A_i, E) P(A_i|E) $
 ]
 
 == 独立性
@@ -291,29 +293,29 @@ $ <bayes>
 
 - 案例1
 
-$ ∑_(i=0)^n binom(n, k)^2 = binom(2n, n) $
+$ sum_(i=0)^n binom(n, k)^2 = binom(2n, n) $
 
 - 案例2
 
-$ ∑_(i=1)^n k binom(n, k)^2 = n binom(2n-1, n-1) $
+$ sum_(i=1)^n k binom(n, k)^2 = n binom(2n-1, n-1) $
 
 - 案例3（曲棍球棒恒等式）
 
-$ ∑_(i=k)^(n-k) binom(i, k) = binom(n+1, k+1) $
+$ sum_(i=k)^(n-k) binom(i, k) = binom(n+1, k+1) $
 
 - 案例4（Vandermonde's 恒等式）
 
-$ ∑_(j=0)^k binom(m, j)binom(n, k-j) = binom(m+n, k) $
+$ sum_(j=0)^k binom(m, j)binom(n, k-j) = binom(m+n, k) $
 
 == 自然数级数
 
 - 案例1
 
-$ ∑_(i=1)^n i = binom(n+1, 2) $
+$ sum_(i=1)^n i = binom(n+1, 2) $
 
 - 案例2
 
-$ ∑_(i=1)^n i^3 = 6 binom(n+1, 4) + 6 binom(n+1, 3) + binom(n+1, 2) $
+$ sum_(i=1)^n i^3 = 6 binom(n+1, 4) + 6 binom(n+1, 3) + binom(n+1, 2) $
 
 - 案例3
 

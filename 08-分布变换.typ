@@ -29,8 +29,8 @@
 #theorem[
   设$X$和$Y$是独立的随机变量，$T = X + Y$是它们的和。若$X$和$Y$是离散的，则$T$的 PMF 为
   $
-    P(T = t) &= ∑_x P(Y = t - x) P(X=x)\
-    &= ∑_y P(X = t - y) P(Y=y)
+    P(T = t) &= sum_x P(Y = t - x) P(X=x)\
+    &= sum_y P(X = t - y) P(Y=y)
   $
 
   若$X$和$Y$是离散的，则$T$的 PDF 为
@@ -87,10 +87,10 @@ $
     align: center + horizon,
     inset: 5.5pt,
     stroke: table-three-line(rgb("000")),
-    [$X_i$], [$∑X_i$],
-    [$"Bin"(n_i, p)$], [$"Bin"(∑ n_i, p)$],
-    [$𝒩(μ_i, σ_i^2)$], [$𝒩(∑ μ_i, ∑ σ_i^2)$],
-    [$chi^2(i)$], [$chi^2 (∑ i)$],
+    [$X_i$], [$sum X_i$],
+    [$"Bin"(n_i, p)$], [$"Bin"(sum n_i, p)$],
+    [$𝒩(μ_i, σ_i^2)$], [$𝒩(sum μ_i, sum σ_i^2)$],
+    [$chi^2(i)$], [$chi^2 (sum i)$],
   ),
   caption: "常见分布卷积和",
   supplement: "表",
@@ -247,7 +247,7 @@ $ β(a, b) = ∫_0^1 x^(a - 1)(1 - x)^(b - 1) = frac(Γ(a)Γ(b), Γ(a + b)) $
 
 #theorem[
   假设随机变量$X_1, …, X_n$独立同分布，且有 CDF $F$，则第$j$个顺序统计量的 CDF 为
-  $ P(X_(j) ≤ x) = ∑_(k = j)^n binom(n, k) F(x)^k (1 - F(x))^(n - k) $
+  $ P(X_(j) ≤ x) = sum_(k = j)^n binom(n, k) F(x)^k (1 - F(x))^(n - k) $
 ]
 
 #theorem[

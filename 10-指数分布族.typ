@@ -23,12 +23,12 @@ $
 也就是说，$I_i$为可能结果发生的信息量。若共有$c$种可能结果，则系统的信息熵为
 
 $
-  H(𝑿) = E(I(𝑿)) = 1 / c ∑ I_i = ∑ p_i log_2 1 / p_i
+  H(𝑿) = E(I(𝑿)) = 1 / c sum I_i = sum p_i log_2 1 / p_i
 $ <entropy>
 
 即系统的信息量的期望。由式@entropy，令$𝑿 ∼ "DUnif"(a_1, …, a_n)$，于是
 
-$ H(𝑿) = ∑_(j=1)^n 1 / n log_2 (n) = log_2 (n) $
+$ H(𝑿) = sum_(j=1)^n 1 / n log_2 (n) = log_2 (n) $
 
 假设$Y$是一个随机变量，取值$1\/p_1, …, 1\/p_n$的概率分别为$p_1, …, p_n$，则根据 LOTUS 有
 
@@ -48,19 +48,19 @@ $ H(𝒀) = 𝔼[log_2 (𝒀)] ≤ log_2 (𝔼[𝒀]) = log_2 (n) = H(𝑿) $
 交叉熵（cross entropy）用于度量一组估计的类别概率与目标类别的匹配程度。对两个不同的分布$p, q$可表示为
 
 $
-  H(p, q) = ∑ p_i log 1 / q_i
+  H(p, q) = sum p_i log 1 / q_i
 $
 
 == KL 散度
 
 度量分布之间紧密性的一个常见方法是 Kullback-Leibler（KL）散度，其定义如下
 
-$ D_("KL")(p||q) = 𝔼_p [ln p(𝑿) / q(𝑿)] = ∑ p_i log p_i / q_i $
+$ D_("KL")(p||q) = 𝔼_p [ln p(𝑿) / q(𝑿)] = sum p_i log p_i / q_i $
 
 上式读作从$q$到$p$的 KL 散度，或$p$相对于$q$的相对熵。其中，$p$和$q$是两个概率分布，可将$D_("KL")(p|q)$散度解释为通过使用概率分布$q$来近似分布$p$而引入的额外熵或不确定性。事实上，KL 散度是两个熵之间的差异。
 
 $
-  D_("KL")(p||q) = underbrace(∑ p_i log_2 1 / q_i, ctext("交叉熵")) - underbrace(∑ p_i log_2 1 / p_i, ctext("p的信息熵"))
+  D_("KL")(p||q) = underbrace(sum p_i log_2 1 / q_i, ctext("交叉熵")) - underbrace(sum p_i log_2 1 / p_i, ctext("p的信息熵"))
 $
 
 根据 LOTUS 有$D(p||q) = −𝔼[log_2 (𝒀)]$，再由 Jensen’s 不等式，得
@@ -84,13 +84,13 @@ $
 直观地说，一个分布越分散，其熵就越大。对于完全随机的变量（等可能），信息熵最大。假设数据是离散分布的，$k$个特征的概率分别为$p_k$，最大熵原理（maximum entropy principle）可以表述为
 
 $
-  max(H(p)) = min_g (∑_(k=1)^k p_k log p_k g)\
-  s.t. ∑_(k=1)^k p_k = 1
+  max(H(p)) = min_g (sum_(k=1)^k p_k log p_k g)\
+  s.t. sum_(k=1)^k p_k = 1
 $
 
 利用 Lagrange 乘子法
 
-$ L(p, λ) = ∑_(k=1)^k p_k log p_k + λ (1 - ∑_(k=1)^k p_k) $
+$ L(p, λ) = sum_(k=1)^k p_k log p_k + λ (1 - sum_(k=1)^k p_k) $
 
 可得
 
@@ -155,25 +155,25 @@ $ A(η) = ln (∫_x h(x)) exp(η(θ)) ⋅ T(x) dd(x) $
 设一个数据集$cal(D)$，在此数据集上的经验分布为$hat(p)(x) = frac("Count"(x), N)$，实际不可能满足所有的经验概率相同，于是在上面的最大熵原理中还需要加入这个经验分布的约束。于是
 
 $
-  max(H(p)) = min_g (∑_(k=1)^n p_k log p_k g)\
-  s.t. ∑_(k=1)^n p_k = 1, E_hat(p)(f(x)) = E_p (f(x))
+  max(H(p)) = min_g (sum_(k=1)^n p_k log p_k g)\
+  s.t. sum_(k=1)^n p_k = 1, E_hat(p)(f(x)) = E_p (f(x))
 $
 
 Lagrange 函数为
 
 $
-  L(p, λ_0, λ) = ∑_(k=1)^n p_k log p_k + λ_0 (1 - ∑_(k=1)^n p_k) + λ^⊤(E_hat(p)(f(x)) - E_p (f(x)))
+  L(p, λ_0, λ) = sum_(k=1)^n p_k log p_k + λ_0 (1 - sum_(k=1)^n p_k) + λ^⊤(E_hat(p)(f(x)) - E_p (f(x)))
 $
 
 求导得
 
 $
-  pdv(, p(x)) L = ∑_(k=1)^n (log p(x) + 1) - ∑_(k=1)^n λ_0 - ∑_(k=1)^n λ^⊤ f(x)
+  pdv(, p(x)) L = sum_(k=1)^n (log p(x) + 1) - sum_(k=1)^n λ_0 - sum_(k=1)^n λ^⊤ f(x)
 $
 
 整理得
 
-$ ∑_(k=1)^n log p(x) + 1 - λ_0 - λ^⊤ f(x) = 0 $
+$ sum_(k=1)^n log p(x) + 1 - λ_0 - λ^⊤ f(x) = 0 $
 
 由于数据集是任意的，对数据集求和也意味着求和项里面的每一项都是$0$
 
@@ -190,22 +190,22 @@ $
 
 在学习和推断中，对于一个概率的归一化因子很难处理，这个归一化因子和配分函数相关。设一个概率分布的似然为
 
-$ p(x|θ) = frac(1, Z(θ)) hat(p)(x|θ), Z(θ) = ∫hat(p)(x|θ) dd(x) $
+$ p(x|θ) = frac(1, Z(θ)) hat(p)(x|θ), Z(θ) = ∫ hat(p)(x|θ) dd(x) $
 
 采用极大似然估计（MLE）
 
 $
-  hat(θ) &= arg max_θ p(x|θ) = arg max_θ ∑_(i=1)^n log p(x_i|θ)\
-  &= arg max_θ ∑_(i=1)^n log hat(p)(x|θ) - N log Z(θ)\
-  &= arg max_θ 1 / N ∑_(i=1)^n log hat(p)(x|θ) - log Z(θ) = arg max_θ med l (θ)
+  hat(θ) &= arg max_θ p(x|θ) = arg max_θ sum_(i=1)^n log p(x_i|θ)\
+  &= arg max_θ sum_(i=1)^n log hat(p)(x|θ) - N log Z(θ)\
+  &= arg max_θ 1 / N sum_(i=1)^n log hat(p)(x|θ) - log Z(θ) = arg max_θ med l (θ)
 $
 
 对参数求导
 
 $
   grad_θ log Z(θ) = frac(1, Z(θ)) grad_θ Z(θ)
-  &= frac(p(x|θ), hat(p)(x|θ) ∫grad_θ hat(p)(x|θ)) dd(x)\
-  &= ∫frac(p(x|θ), hat(p)(x|θ) grad_θ hat(p)(x|θ)) dd(x)\
+  &= frac(p(x|θ), hat(p)(x|θ) ∫ grad_θ hat(p)(x|θ)) dd(x)\
+  &= ∫ frac(p(x|θ), hat(p)(x|θ) grad_θ hat(p)(x|θ)) dd(x)\
   &= E_p(x|θ)(grad_θ log hat(p)(x|θ))
 $
 
@@ -222,7 +222,7 @@ $
 抽样得到$hat(x)_(1 - m) ∼ p_("model")(x|θ^t)$，则
 
 $
-  θ^(t + 1) = θ^t + η(∑_(i=1)^m grad_θ log hat(p)(x_i|θ^t)) - ∑_(i=1)^m grad_θ log hat(p)(hat(x)_i|θ^t)
+  θ^(t + 1) = θ^t + η(sum_(i=1)^m grad_θ log hat(p)(x_i|θ^t)) - sum_(i=1)^m grad_θ log hat(p)(hat(x)_i|θ^t)
 $
 
 这个算法称为基于 MCMC 抽样的梯度上升。每次通过抽样得到的样本称为幻想粒子，若这些粒子区域的概率高于实际分布，则最大化参数的结果就是降低这些部分的概率。MCMC 算法的相关内容见后面的章节，这里只给出结果。

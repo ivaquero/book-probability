@@ -9,11 +9,11 @@
 
 #definition[
   对离散变量$X$，设其值为$x_1, x_2, …$，则$X$的期望值定义为：
-  $ 𝔼[X] = ∑_(j=1)^(∞) x_j P(X=x_j) $
+  $ 𝔼[X] = sum_(j=1)^(∞) x_j P(X=x_j) $
 
   若支撑集是有限的，则上式可以写作
 
-  $ 𝔼[X] = ∑_x underbrace(x, "value") underbrace(P(X=x), "PMF at x") $
+  $ 𝔼[X] = sum_x underbrace(x, "value") underbrace(P(X=x), "PMF at x") $
 ]
 
 #theorem[
@@ -41,8 +41,8 @@
   设 A 和 B 都是事件。则下列性质成立
   - $(I_A)^k = I_A$
   - $I_(macron(A)) = 1 − I_A$
-  - $I_(A∩B) = I_A I_B$
-  - $I_(A∪B) = I_A + I_B − I_A I_B$
+  - $I_(A ∩ B) = I_A I_B$
+  - $I_(A ∪ B) = I_A + I_B − I_A I_B$
 ]
 
 #theorem[
@@ -57,13 +57,13 @@
 
 #theorem(title: "LOTUS")[
   若$X$是离散随机变量，$g(X)$是一个$ℝ → ℝ$的函数，则
-  $ 𝔼[g(X)] = ∑_x g(X) P(X=x) $
+  $ 𝔼[g(X)] = sum_x g(X) P(X=x) $
 ]
 
 令$X ∼ "Geom"(p)$，$q = 1 - p$。利用几何分布定义，${X > n}$是前$n + 1$次试验全部失败的事件，则由 LOTUS，有
 
 $
-  𝔼[X] = ∑_(n = 0)^(∞) P(X > n) = ∑_(n = 0)^(∞) q^(n+1) = frac(q, 1 - q) = frac(q, p)
+  𝔼[X] = sum_(n = 0)^(∞) P(X > n) = sum_(n = 0)^(∞) q^(n+1) = frac(q, 1 - q) = frac(q, p)
 $
 
 = 方差
