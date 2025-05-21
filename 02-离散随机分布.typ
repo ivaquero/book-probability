@@ -271,7 +271,6 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
 #figure(
   tableq(data, 5, inset: 0.33em),
   caption: "主要离散分布关系",
-  supplement: "表",
   kind: table,
 )
 

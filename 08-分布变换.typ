@@ -93,7 +93,6 @@ $
     [$chi^2(i)$], [$chi^2 (sum i)$],
   ),
   caption: "常见分布卷积和",
-  supplement: "表",
   kind: table,
 )
 
@@ -292,6 +291,5 @@ $ U_((j)) ∼ "Beta"(j, n − j + 1) $
     [Pareto-$k$], [Gamma], [],
   ),
   caption: "常见共轭先验",
-  supplement: "表",
   kind: table,
 )

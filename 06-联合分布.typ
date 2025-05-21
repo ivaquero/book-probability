@@ -109,7 +109,6 @@ $X$的边际 PMF 是单独观察$X$时，$X$的 PMF。为了将联合 PMF 转换
     [$P(Y=y|X=x) = frac(f_X (x|Y=y) P(Y=y), f_X (x))$], [$f_(Y|X)(y|x) = frac(f_(X|Y)(x|y) f_Y (y), f_X (x))$],
   ),
   caption: "条件 Bayes' 法则",
-  supplement: "表",
   kind: table,
 )
 
@@ -124,7 +123,6 @@ $X$的边际 PMF 是单独观察$X$时，$X$的 PMF。为了将联合 PMF 转换
     [$sum_y f_X (x|Y=y) P(Y=y)$], [$∫_(-∞)^(∞) f_(X|Y)(x|y) f_Y (y) dd(y)$],
   ),
   caption: "条件全概率定律",
-  supplement: "表",
   kind: table,
 )
 

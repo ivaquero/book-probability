@@ -30,7 +30,6 @@
     [$ln(a, b)$], [$frac(b - a, ln b - ln a)$], [],
   ),
   caption: "期望与方差",
-  supplement: "表",
   kind: table,
 )
 
