@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "连续随机分布",
-  info: info,
-)
+#show: chapter-style.with(title: "连续随机分布", info: info)
 
 = 连续随机变量
 <连续随机变量>
@@ -55,14 +52,8 @@
 ]
 
 #sgrid(
-  figure(
-    image("images/distrs/distr_unif_pdf.png", width: 90%),
-    caption: "PDF",
-  ),
-  figure(
-    image("images/distrs/distr_unif_cdf.png", width: 90%),
-    caption: "CDF",
-  ),
+  figure(image("images/distrs/distr_unif_pdf.png", width: 90%), caption: "PDF"),
+  figure(image("images/distrs/distr_unif_cdf.png", width: 90%), caption: "CDF"),
   columns: (200pt,) * 2,
   gutter: 2pt,
   caption: "均匀分布",
@@ -183,9 +174,9 @@ $
   若$X ∼ 𝒩(μ, σ)$，则
 
   $
-    P(|X - μ| < 1σ) &= 2⋅Φ(-1) ≈ 0.68 \
-    P(|X - μ| < 2σ) &= 2⋅Φ(-2) ≈ 0.95 \
-    P(|X - μ| < 3σ) &= 2⋅Φ(-3) ≈ 0.997
+    P(|X - μ| < 1σ) & = 2⋅Φ(-1) ≈ 0.68  \
+    P(|X - μ| < 2σ) & = 2⋅Φ(-2) ≈ 0.95  \
+    P(|X - μ| < 3σ) & = 2⋅Φ(-3) ≈ 0.997
   $
 ]
 
@@ -220,14 +211,8 @@ $
 ]
 
 #sgrid(
-  figure(
-    image("images/distrs/distr_expo_pdf.png", width: 90%),
-    caption: "PDF",
-  ),
-  figure(
-    image("images/distrs/distr_expo_cdf.png", width: 90%),
-    caption: "CDF",
-  ),
+  figure(image("images/distrs/distr_expo_pdf.png", width: 90%), caption: "PDF"),
+  figure(image("images/distrs/distr_expo_cdf.png", width: 90%), caption: "CDF"),
   columns: (200pt,) * 2,
   gutter: 2pt,
   caption: "指数分布",

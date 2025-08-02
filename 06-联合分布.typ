@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "联合分布",
-  info: info,
-)
+#show: chapter-style.with(title: "联合分布", info: info)
 
 = 联合、边际、条件分布
 <联合-边际-条件分布>
@@ -104,8 +101,12 @@ $X$的边际 PMF 是单独观察$X$时，$X$的 PMF。为了将联合 PMF 转换
     align: center + horizon,
     inset: 6.5pt,
     stroke: table-three-line(rgb("000")),
-    table.header([], [$Y$离散], [$Y$连续], [$X$离散]),
+    table.header(
+      [], [$Y$离散], [$Y$连续],
+      [$X$离散],
+    ),
     [$P(Y=y|X=x) = frac(P(X=x|Y=y) P(Y=y), P(X=x))$], [$f_Y (y|X=x) = frac(P(X=x|Y=y) f_Y (y), P(X=x))$], [$X$连续],
+
     [$P(Y=y|X=x) = frac(f_X (x|Y=y) P(Y=y), f_X (x))$], [$f_(Y|X)(y|x) = frac(f_(X|Y)(x|y) f_Y (y), f_X (x))$],
   ),
   caption: "条件 Bayes' 法则",
@@ -118,8 +119,12 @@ $X$的边际 PMF 是单独观察$X$时，$X$的 PMF。为了将联合 PMF 转换
     align: center,
     inset: 6.5pt,
     stroke: table-three-line(rgb("000")),
-    table.header([], [$Y$离散], [$Y$连续], [$X$离散]),
+    table.header(
+      [], [$Y$离散], [$Y$连续],
+      [$X$离散],
+    ),
     [$sum_y P(X=x|Y=y) P(Y=y)$], [$∫_(-∞)^(∞) P(X=x|Y=y) f_Y (y) dd(y)$], [$X$连续],
+
     [$sum_y f_X (x|Y=y) P(Y=y)$], [$∫_(-∞)^(∞) f_(X|Y)(x|y) f_Y (y) dd(y)$],
   ),
   caption: "条件全概率定律",
@@ -154,8 +159,8 @@ $ 𝔼[Z] = sqrt(frac(2, π)) ⇒ 𝔼[|X - Y|] = 2 / sqrt(π) $
 #definition[
   随机变量$X$和$Y$的协方差为
   $
-    "Cov"(X, Y) &= 𝔼[(X - E X)(Y - E Y)] \
-    &= 𝔼[X Y] − 𝔼[X]𝔼[Y]
+    "Cov"(X, Y) & = 𝔼[(X - E X)(Y - E Y)] \
+                & = 𝔼[X Y] − 𝔼[X]𝔼[Y]
   $
 ]
 

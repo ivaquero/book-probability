@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "极限定理",
-  info: info,
-)
+#show: chapter-style.with(title: "极限定理", info: info)
 
 = 不等式
 <不等式>
@@ -112,10 +109,7 @@ $
   $ P{|lim_(n → ∞)(1 / n sum X_i) - μ| ≤ ϵ} = 1 $
 ]
 
-#figure(
-  image("images/trials/theo-lln.png", width: 50%),
-  caption: "大数定律",
-)
+#figure(image("images/trials/theo-lln.png", width: 50%), caption: "大数定律")
 
 == 经验 CDF
 

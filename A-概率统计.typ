@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: appendix-style.with(
-  title: "概率统计",
-  info: info,
-)
+#show: appendix-style.with(title: "概率统计", info: info)
 
 = 统计测度
 <统计测度>
@@ -17,6 +14,7 @@
     inset: 0.6em,
     stroke: table-three-line(rgb("000")),
     table.header([分布], [$𝔼[X]$], [$D(X)$]),
+
     [$"Bern"(p)$], [$p$], [$p(1 - p)$],
     [$"Bin"(n, p)$], [$n p$], [$n p(1 - p)$],
     [$"Pois"(λ)$], [$λ$], [$λ$],
@@ -37,8 +35,8 @@
 <特征函数>
 
 $
-  ϕ_X (t) &= 𝔼[e^(i t x)] = sum_(k=1)^n 𝔼[frac((i t)^k x^k, j!)]\
-  &= 1 + frac(i t 𝔼[x], 1) - frac(t^2 𝔼[x^2], 2!) + ⋯ + frac((i t)^n 𝔼[x^n], n!)
+  ϕ_X (t) & = 𝔼[e^(i t x)] = sum_(k=1)^n 𝔼[frac((i t)^k x^k, j!)]                         \
+          & = 1 + frac(i t 𝔼[x], 1) - frac(t^2 𝔼[x^2], 2!) + ⋯ + frac((i t)^n 𝔼[x^n], n!)
 $
 
 由上式，通过比较特征函数中的矩，即可确定概率分布是否相同。

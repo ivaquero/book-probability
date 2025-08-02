@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "离散随机分布",
-  info: info,
-)
+#show: chapter-style.with(title: "离散随机分布", info: info)
 
 = 随机变量
 

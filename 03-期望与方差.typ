@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "期望与方差",
-  info: info,
-)
+#show: chapter-style.with(title: "期望与方差", info: info)
 
 = 期望
 <期望>

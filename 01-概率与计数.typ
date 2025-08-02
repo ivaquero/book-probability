@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "概率与计数",
-  info: info,
-)
+#show: chapter-style.with(title: "概率与计数", info: info)
 
 = 集合
 <集合>
@@ -17,56 +14,42 @@
 
 == 集合运算律
 
-#block(
-  height: 10em,
-  columns()[
-    - 交换律
-      #list(
-        [$A ∪ B = B ∪ A$],
-        [$A ∩ B = B ∩ A$],
-        indent: 0.1em,
-      )
-    - 结合律
-      #list(
-        [$A ∪ (B ∪ C) = (A ∪ B) ∪ C$],
-        [$A ∩ (B ∩ C) = (A ∩ B) ∩ C$],
-        indent: 0.1em,
-      )
-    - 分配律
-      #list(
-        [$A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)$],
-        [$A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)$],
-        indent: 0.1em,
-      )
-    - De Morgen 律
-      #list(
-        [$overline(A ∪ B) = overline(A) ∩ overline(B)$],
-        [$overline(A ∩ B) = overline(A) ∪ overline(B)$],
-        indent: 0.1em,
-      )
-  ],
-)
+#block(height: 10em, columns()[
+  - 交换律
+    #list([$A ∪ B = B ∪ A$], [$A ∩ B = B ∩ A$], indent: 0.1em)
+  - 结合律
+    #list(
+      [$A ∪ (B ∪ C) = (A ∪ B) ∪ C$],
+      [$A ∩ (B ∩ C) = (A ∩ B) ∩ C$],
+      indent: 0.1em,
+    )
+  - 分配律
+    #list(
+      [$A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)$],
+      [$A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)$],
+      indent: 0.1em,
+    )
+  - De Morgen 律
+    #list(
+      [$overline(A ∪ B) = overline(A) ∩ overline(B)$],
+      [$overline(A ∩ B) = overline(A) ∪ overline(B)$],
+      indent: 0.1em,
+    )
+])
 
 == 转化与组合
 
-#block(
-  height: 7em,
-  columns()[
-    - 转换
-      #list(
-        [$A + B = A ∪ B$],
-        [$A - B = A B^∁$],
-        [$A (B-C) = A B - A C$],
-        indent: 0.1em,
-      )
-    - Cartian 积
-      #list(
-        [$A × B = \{(x, y) |x ∈ A ∧ y ∈ B\}$],
-        [$A × ∅ = ∅$],
-        indent: 0.1em,
-      )
-  ],
-)
+#block(height: 7em, columns()[
+  - 转换
+    #list(
+      [$A + B = A ∪ B$],
+      [$A - B = A B^∁$],
+      [$A (B-C) = A B - A C$],
+      indent: 0.1em,
+    )
+  - Cartian 积
+    #list([$A × B = \{(x, y) |x ∈ A ∧ y ∈ B\}$], [$A × ∅ = ∅$], indent: 0.1em)
+])
 
 Cartian 幂：$n$元集合有$2^(n)-1$个子集，其$k$阶 Cartian 幂有$n^(k)$个元素。
 
@@ -163,9 +146,8 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
 #theorem(title: "容斥原理")[
   $
     P(U_(i=1)^n A_i) = sum_i P(A_i)
-    - sum_(i < j) P(A_i ∩ A_j)
-    &+ sum_(i < j < k) P(A_i ∩ A_j ∩ A_k)-⋯ \
-    &+(-1)^(n+1) P(A_1 ∩ ⋯ ∩ A_n)
+    - sum_(i < j) P(A_i ∩ A_j) & + sum_(i < j < k) P(A_i ∩ A_j ∩ A_k)-⋯ \
+                               & +(-1)^(n+1) P(A_1 ∩ ⋯ ∩ A_n)
   $
 ]
 
@@ -233,7 +215,9 @@ $ <bayes>
 ]
 
 #theorem(title: "Bayes' 法则的几率形式")[
-  $ frac(P(A|B), P(overline(A)|B)) = frac(P(B|A), P(B | overline(A))) frac(P(A), P(overline(A))) $
+  $
+    frac(P(A|B), P(overline(A)|B)) = frac(P(B|A), P(B | overline(A))) frac(P(A), P(overline(A)))
+  $
 ]
 
 #theorem(title: "全概率定律")[

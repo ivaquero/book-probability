@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "条件期望与方差",
-  info: info,
-)
+#show: chapter-style.with(title: "条件期望与方差", info: info)
 
 = 条件期望
 <条件期望>
@@ -81,8 +78,8 @@ $ "Cov"(X, Y) = "Cov"(X, a) + b "Cov"(X, X) + "Cov"(X, ϵ) = b "Var"(X) $
 于是
 
 $
-  b &= frac("Cov"(X, Y), "Var"(X))\
-  a &= 𝔼[Y] - b 𝔼[X] = 𝔼[Y] - frac("Cov"(X, Y), "Var"(X))⋅𝔼[X]
+  b & = frac("Cov"(X, Y), "Var"(X))                             \
+  a & = 𝔼[Y] - b 𝔼[X] = 𝔼[Y] - frac("Cov"(X, Y), "Var"(X))⋅𝔼[X]
 $
 
 = 条件方差

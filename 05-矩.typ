@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "矩",
-  info: info,
-)
+#show: chapter-style.with(title: "矩", info: info)
 
 = 中数与众数
 <中数与众数>
@@ -99,8 +96,8 @@ $
 由方差性质，$"Var"(X) = 𝔼[X^2] - 𝔼[X]^2$，有
 
 $
-  𝔼[x_i^2 - μ^2] &= "Var"(X) + 𝔼[X]^2 = σ^2 + μ^2 - μ^2 = σ^2\
-  𝔼[μ^2] - 𝔼[μ]^2 &= 𝔼[X^2] - 𝔼[X]^2 = "Var"(μ)
+   𝔼[x_i^2 - μ^2] & = "Var"(X) + 𝔼[X]^2 = σ^2 + μ^2 - μ^2 = σ^2 \
+  𝔼[μ^2] - 𝔼[μ]^2 & = 𝔼[X^2] - 𝔼[X]^2 = "Var"(μ)
 $
 
 于是

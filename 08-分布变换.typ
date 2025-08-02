@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "分布变换",
-  info: info,
-)
+#show: chapter-style.with(title: "分布变换", info: info)
 
 = 变量的变化
 <变量的变化>
@@ -29,15 +26,15 @@
 #theorem[
   设$X$和$Y$是独立的随机变量，$T = X + Y$是它们的和。若$X$和$Y$是离散的，则$T$的 PMF 为
   $
-    P(T = t) &= sum_x P(Y = t - x) P(X=x)\
-    &= sum_y P(X = t - y) P(Y=y)
+    P(T = t) & = sum_x P(Y = t - x) P(X=x) \
+             & = sum_y P(X = t - y) P(Y=y)
   $
 
   若$X$和$Y$是离散的，则$T$的 PDF 为
 
   $
-    f_T (t) &= ∫_(-∞)^(∞) f_Y (t - x) f_X (x) dd(x)\
-    &= ∫_(-∞)^(∞) f_X (t - y) f_Y (y) dd(y)
+    f_T (t) & = ∫_(-∞)^(∞) f_Y (t - x) f_X (x) dd(x) \
+            & = ∫_(-∞)^(∞) f_X (t - y) f_Y (y) dd(y)
   $
 ]
 
@@ -60,13 +57,12 @@ $
 令$X, Y limits(∼)^("i.i.d.") "Unif"(0, 1)$，则对$T = X + Y$有
 
 $
-  f_T (t)
-  &= ∫_(-∞)^(∞) f_Y (t - x) f_X (x) dd(x)
-  = cases(
-    delim: "{",
-    ∫_0^t dd(x) = t & "for" 0 < t ≤ 1,
-    ∫_(t - 1)^1 dd(x) = 2 - t & "for" 1 < t < 2
-  )
+  f_T (t) & = ∫_(-∞)^(∞) f_Y (t - x) f_X (x) dd(x)
+            = cases(
+              delim: "{",
+              ∫_0^t dd(x) = t & "for" 0 < t ≤ 1,
+              ∫_(t - 1)^1 dd(x) = 2 - t & "for" 1 < t < 2
+            )
 $
 
 这实际上是三角分布$"Triangle(0, 1, 2)"$。从启发式的角度来看，$T$更有可能取中间值而非极端值：
@@ -146,9 +142,9 @@ $
 即
 
 $
-  P(X = k) &= frac(1, β(a, b)) ∫_0^1 binom(n, k) p^k(1 - p)^(n - k) ⋅ p^(a - 1)(1 - p)^(b - 1) dd(p)\
-  &= frac(binom(n, k), β(a, b)) ∫_0^1 p^(a + k - 1)(1 - p)^(b + n - k - 1) d p\
-  &= vec(n, k) frac(β(a + k, b + n - k), β(a, b))
+  P(X = k) & = frac(1, β(a, b)) ∫_0^1 binom(n, k) p^k(1 - p)^(n - k) ⋅ p^(a - 1)(1 - p)^(b - 1) dd(p) \
+           & = frac(binom(n, k), β(a, b)) ∫_0^1 p^(a + k - 1)(1 - p)^(b + n - k - 1) d p              \
+           & = vec(n, k) frac(β(a + k, b + n - k), β(a, b))
 $
 
 由上，Beta-二项分布可被认为是一个连续的混合模型，可被直接使用，也可被拆分使用。

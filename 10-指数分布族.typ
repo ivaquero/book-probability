@@ -1,8 +1,5 @@
 #import "lib/lib.typ": *
-#show: chapter-style.with(
-  title: "指数分布族",
-  info: info,
-)
+#show: chapter-style.with(title: "指数分布族", info: info)
 
 = 熵
 <熵>
@@ -98,13 +95,7 @@ $ p_1 = p_2 = ⋯ = p_k = 1 / k $
 
 因此，等可能的情况熵最大。此前章节，由 Jensen's 不等式，也可得到同样的结论。
 
-#figure(
-  image(
-    "images/trials/metric-entropy.png",
-    width: 70%,
-  ),
-  caption: "熵",
-)
+#figure(image("images/trials/metric-entropy.png", width: 70%), caption: "熵")
 
 简言之，熵与不确定性有关。一个比较分散或扁平的先验分布是一个信息量较小的分布。这不仅在直观上是正确的，且有熵的概念的理论支持。我们希望找到尽可能大的熵（最小信息量）的分布，但也要考虑到我们的问题所定义的约束。这是一个可用数学方法解决的优化问题
 
@@ -136,8 +127,8 @@ $ p_1 = p_2 = ⋯ = p_k = 1 / k $
 指数分布族（exponential family）的概念是 Pitman，Darmois 和 Koopman 在 1935∼1936 年提出的。包括指数分布、Gaussian 分布、Poisson 分布和二项分布等一系列分布。其概率分布满足以下形式
 
 $
-  p(x|η) &= h(x) exp(η^⊤ T(x)) - A(η) \
-  &= frac(1, exp(A(η))) h(x) exp(η^⊤ T(x))
+  p(x|η) & = h(x) exp(η^⊤ T(x)) - A(η)             \
+         & = frac(1, exp(A(η))) h(x) exp(η^⊤ T(x))
 $
 
 其中，$θ := (θ_1, θ_2, …, θ_s)^⊤$被称为族参数，$A(η)$是对数配分函数（log partition function），在这里是归一化因子的对数形式，其其表达式为
@@ -195,21 +186,20 @@ $ p(x|θ) = frac(1, Z(θ)) hat(p)(x|θ), Z(θ) = ∫ hat(p)(x|θ) dd(x) $
 采用极大似然估计（MLE）
 
 $
-  hat(θ) &= arg max_θ p(x|θ) = arg max_θ sum_(i=1)^n log p(x_i|θ)\
-  &= arg max_θ sum_(i=1)^n log hat(p)(x|θ) - N log Z(θ)\
-  &= arg max_θ 1 / N sum_(i=1)^n log hat(p)(x|θ) - log Z(θ) = arg max_θ med l (θ)
+  hat(θ) & = arg max_θ p(x|θ) = arg max_θ sum_(i=1)^n log p(x_i|θ)                        \
+         & = arg max_θ sum_(i=1)^n log hat(p)(x|θ) - N log Z(θ)                           \
+         & = arg max_θ 1 / N sum_(i=1)^n log hat(p)(x|θ) - log Z(θ) = arg max_θ med l (θ)
 $
 
 对参数求导
 
 $
-  grad_θ log Z(θ) = frac(1, Z(θ)) grad_θ Z(θ)
-  &= frac(p(x|θ), hat(p)(x|θ) ∫ grad_θ hat(p)(x|θ)) dd(x)\
-  &= ∫ frac(p(x|θ), hat(p)(x|θ) grad_θ hat(p)(x|θ)) dd(x)\
-  &= E_p(x|θ)(grad_θ log hat(p)(x|θ))
+  grad_θ log Z(θ) = frac(1, Z(θ)) grad_θ Z(θ) & = frac(p(x|θ), hat(p)(x|θ) ∫ grad_θ hat(p)(x|θ)) dd(x) \
+                                              & = ∫ frac(p(x|θ), hat(p)(x|θ) grad_θ hat(p)(x|θ)) dd(x) \
+                                              & = E_p(x|θ)(grad_θ log hat(p)(x|θ))
 $
 
-由于这个表达式和未知的概率相关，无法直接精确求解，需要近似抽样，若没有这一项，则可以采用梯度下降。
+由于这个表达式和未知的概率相关，无法直接精确求解，需要近似抽样，若无这一项，则可以采用梯度下降。
 
 上面这个期望值，是对模型假设的概率分布，定义真实概率分布为$p_("data")$，于是，$l(θ)$中的第一项的梯度可以看成是从这个概率分布中抽样出来的$N$个点求和平均，可以近似期望值。
 
@@ -264,6 +254,7 @@ $ A(η) = -frac(η_1^2, 4 η_2) + 1 / 2 log(-π / η_2) $
     [$λ$], [指数], [$λ$], [$-λ$], [$1$], [$x$],
     [$-log λ$], [Weibull], [$λ$], [$-1 / λ^k$], [$x^(k-1)$], [$x^k$],
     [$k log λ - log k$], [Gaussian], [$μ, σ^2$], [$(μ / σ^2, -1 / (2σ^2))^⊤$], [$1 / sqrt(2π)$], [$(x, x^2)^⊤$],
+
     [$μ^2 / (2σ^2) + log σ$],
     [Log Gaussian],
     [$μ, σ^2$],
@@ -272,8 +263,11 @@ $ A(η) = -frac(η_1^2, 4 η_2) + 1 / 2 log(-π / η_2) $
     [$(log x, (log x)^2)^⊤$],
 
     [$μ^2 / (2σ^2) + log σ$], [Beta], [$α,β$], [$(α,β)^⊤$], [$1 / (x(1-x))$], [$(log x, log(1-x))^⊤$],
+
     [$log (Γ(α)Γ(β)) - log Γ(α+β)$], [Gamma], [$α,β$], [$(α-1, -β)^⊤$], [$1$], [$(log x, x)^⊤$],
+
     [$log Γ(α) - α log β$], [$chi^2$分布], [$ν$], [$ν / 2-1$], [$e^(-x / 2)$], [$log x$],
+
     [$log Γ(ν / 2) + ν / 2 log 2$],
   ),
   caption: "指数分布族",
