@@ -143,7 +143,7 @@ $
 
 $
   P(X = k) & = frac(1, β(a, b)) ∫_0^1 binom(n, k) p^k(1 - p)^(n - k) ⋅ p^(a - 1)(1 - p)^(b - 1) dd(p) \
-           & = frac(binom(n, k), β(a, b)) ∫_0^1 p^(a + k - 1)(1 - p)^(b + n - k - 1) d p              \
+           & = frac(binom(n, k), β(a, b)) ∫_0^1 p^(a + k - 1)(1 - p)^(b + n - k - 1) d p \
            & = vec(n, k) frac(β(a + k, b + n - k), β(a, b))
 $
 

@@ -78,7 +78,7 @@ $ "Cov"(X, Y) = "Cov"(X, a) + b "Cov"(X, X) + "Cov"(X, ϵ) = b "Var"(X) $
 于是
 
 $
-  b & = frac("Cov"(X, Y), "Var"(X))                             \
+  b & = frac("Cov"(X, Y), "Var"(X)) \
   a & = 𝔼[Y] - b 𝔼[X] = 𝔼[Y] - frac("Cov"(X, Y), "Var"(X))⋅𝔼[X]
 $
 

@@ -127,7 +127,7 @@ $ p_1 = p_2 = ⋯ = p_k = 1 / k $
 指数分布族（exponential family）的概念是 Pitman，Darmois 和 Koopman 在 1935∼1936 年提出的。包括指数分布、Gaussian 分布、Poisson 分布和二项分布等一系列分布。其概率分布满足以下形式
 
 $
-  p(x|η) & = h(x) exp(η^⊤ T(x)) - A(η)             \
+  p(x|η) & = h(x) exp(η^⊤ T(x)) - A(η) \
          & = frac(1, exp(A(η))) h(x) exp(η^⊤ T(x))
 $
 
@@ -186,8 +186,8 @@ $ p(x|θ) = frac(1, Z(θ)) hat(p)(x|θ), Z(θ) = ∫ hat(p)(x|θ) dd(x) $
 采用极大似然估计（MLE）
 
 $
-  hat(θ) & = arg max_θ p(x|θ) = arg max_θ sum_(i=1)^n log p(x_i|θ)                        \
-         & = arg max_θ sum_(i=1)^n log hat(p)(x|θ) - N log Z(θ)                           \
+  hat(θ) & = arg max_θ p(x|θ) = arg max_θ sum_(i=1)^n log p(x_i|θ) \
+         & = arg max_θ sum_(i=1)^n log hat(p)(x|θ) - N log Z(θ) \
          & = arg max_θ 1 / N sum_(i=1)^n log hat(p)(x|θ) - log Z(θ) = arg max_θ med l (θ)
 $
 

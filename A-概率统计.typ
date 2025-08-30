@@ -35,7 +35,7 @@
 <特征函数>
 
 $
-  ϕ_X (t) & = 𝔼[e^(i t x)] = sum_(k=1)^n 𝔼[frac((i t)^k x^k, j!)]                         \
+  ϕ_X (t) & = 𝔼[e^(i t x)] = sum_(k=1)^n 𝔼[frac((i t)^k x^k, j!)] \
           & = 1 + frac(i t 𝔼[x], 1) - frac(t^2 𝔼[x^2], 2!) + ⋯ + frac((i t)^n 𝔼[x^n], n!)
 $
 
