@@ -66,7 +66,7 @@ Cartian 幂：$n$元集合有$2^(n)-1$个子集，其$k$阶 Cartian 幂有$n^(k)
   假设 A 是有限样本空间 S 中的一个事件，A 的朴素概率（naive probability）为
 
   $
-    P_("naive")(A) = |A| / |S| = ctext("事件A发生的次数") / ctext("S中所有事件发生的总次数")
+    P_("naive")(A) = frac(|A|, |S|) = ctext("事件A发生的次数") / ctext("S中所有事件发生的总次数")
   $
 ]
 
@@ -267,9 +267,16 @@ $ <bayes>
 === 流行病学
 
 - 几率比（odds ratio）：
-  $ "OR" = frac("odds"(D|C), "odds"(D | overline(C))) $
+
+  $
+    "OR" = frac("odds"(D|C), "odds"(D | overline(C)))
+  $
+
 - 相对风险（relative risk）：
-  $ "RR" = frac(P(D|C), P(D | overline(C))) $
+
+  $
+    "RR" = frac(P(D|C), P(D | overline(C)))
+  $
 
 = 讲述证明扩展
 
