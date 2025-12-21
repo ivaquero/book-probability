@@ -109,7 +109,10 @@ $
   $ P{|lim_(n → ∞)(1 / n sum X_i) - μ| ≤ ϵ} = 1 $
 ]
 
-#figure(image("images/trials/theo-lln.png", width: 50%), caption: "大数定律")
+#figure(
+  image("images/trials/theo-lln.png", width: 50%),
+  caption: "大数定律",
+)
 
 == 经验 CDF
 
