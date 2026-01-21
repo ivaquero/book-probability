@@ -273,4 +273,3 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
 
 + $n p ≥ 5$ ⇒ $B(n, p) → 𝒩(n p, n p(1 - p))$
 + $N → ∞$ ⇒ $H(N, m, n) → B(n, p)$（当$n$固定，则$p=M / N$固定）
-
