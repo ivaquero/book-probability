@@ -26,7 +26,7 @@
   注意，若$x$是$X$的支撑集，则为正值，否则为$0$。
 ]
 
-#theorem(title: "有效 PMFs")[
+#theorem(title: ctext("有效 PMFs"))[
   设离散随机变量$X$的支撑集为$x_1, x_2$，$X$的 PMF $p_X$必须满足以下两个条件：
 
   + 非负的：$p_X (x) > O "if" x = 2; "for some" j, "else" p_X (x) = 0$
@@ -123,7 +123,7 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
 == 几何分布
 
 #definition[
-  在$n$次 Bernoulli 试验中，连续失败$k$次的概率分布服从几何分布，记作$X ∼ "Geom"(p)$q，其得名于几何级数
+  在$n$次 Bernoulli 试验中，连续失败$k$次的概率分布服从几何分布，记作$X ∼ "Geom"(p)$，其得名于几何级数
 
   $
     G = sum_(i=0)^n r^(i) = frac(1 - r^(n+1), 1 - r), quad r ≠ 1

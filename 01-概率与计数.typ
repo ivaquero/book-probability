@@ -78,7 +78,7 @@ Cartian 幂：$n$元集合有$2^(n)-1$个子集，其$k$阶 Cartian 幂有$n^(k)
   考虑$n$个对象，并从它们中选出$k$个对象，每次选择后放回。则有$n^k$种可能的结果。
 ]
 
-#theorem(title: "二项式定理")[
+#theorem(title: ctext("二项式定理"))[
   对$k ≤ n$，有
 
   $ binom(n, k) = frac(n(n-1)⋯(n-k+1), k!) = frac(n!, (n-k)!k!) $
@@ -143,7 +143,7 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
 - $A ⊆ B ⇒ P(A) < P(B)$
 - $P(A ∪ B) = P(A) + P(B) - P(A ∩ B)$
 
-#theorem(title: "容斥原理")[
+#theorem(title: ctext("容斥原理"))[
   $
     P(U_(i=1)^n A_i) = sum_i P(A_i)
     - sum_(i < j) P(A_i ∩ A_j) & + sum_(i < j < k) P(A_i ∩ A_j ∩ A_k)-⋯ \
@@ -151,8 +151,10 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
   $
 ]
 
-#corollary(title: "二元容斥原理")[
-  $ P(A Δ B) = P(A) + P(B) - 2P(A ∩ B) $
+#corollary(title: ctext("二元容斥原理"))[
+  $
+    P(A Δ B) = P(A) + P(B) - 2P(A ∩ B)
+  $
 ]
 
 = 条件概率
@@ -160,7 +162,9 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
 
 #definition[
   若 A 和 B 是$P(B) > 0$的事件，则给定 B 的 A 的条件概率（用$P(A|B)$表示）定义为
-  $ P(A|B) = frac(P(A ∩ B), P(B)) $
+  $
+    P(A|B) = frac(P(A ∩ B), P(B))
+  $
 ]
 
 #tip-box()[
@@ -168,10 +172,12 @@ $ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
   #align("-- <Introduction to Probability>", right)
 ]
 
-== Bayes' 法则
+== 贝叶斯定理
 
-#theorem(title: "Bayes' 法则")[
-  $ P(A|B) = frac(P(B|A)P(A), P(B)) $
+#theorem(title: ctext("贝叶斯定理"))[
+  $
+    P(A|B) = frac(P(B|A)P(A), P(B))
+  $
 
   其中
   - $P(A)$：先验（prior），反映事先对 A 的认识
@@ -193,7 +199,7 @@ $ <bayes>
 + 原因的解释力，即该原因可能导致被观测到的现象的概率
 + 原因的可能性，即该原因在所以潜在原因中的占比，也就是先验
 
-关于 Bayes' 法则的更详细解释和应用，请参考第 11 章及其后续章节。
+关于 贝叶斯定理的更详细解释和应用，请参考第 11 章及其后续章节。
 
 #theorem[
   对于概率为正的任何事件 A 和 B，有
@@ -203,7 +209,9 @@ $ <bayes>
 #theorem[
   若概率$P(A_1, A_2, …, A_(n−1)) > 0$，则对任何事件$A_1, A_2, …, A_n$，有
 
-  $P(A_1, A_2, …, A_n) = P(A_1) P(A_2|A_1) P(A_3|A_1, A_2) ⋯ P(A_n|A_1, …, A_(n-1))$
+  $
+    P(A_1, A_2, …, A_n) = P(A_1) P(A_2|A_1) P(A_3|A_1, A_2) ⋯ P(A_n|A_1, …, A_(n-1))
+  $
 
   其中，$(A_3|A_1, A_2) = (A_3|A_1 ∩ A_2)$。
 ]
@@ -214,13 +222,13 @@ $ <bayes>
   $ "odds"(A) = P(A) / P(overline(A)) $
 ]
 
-#theorem(title: "Bayes' 法则的几率形式")[
+#theorem(title: ctext("贝叶斯定理的几率形式"))[
   $
     frac(P(A|B), P(overline(A)|B)) = frac(P(B|A), P(B | overline(A))) frac(P(A), P(overline(A)))
   $
 ]
 
-#theorem(title: "全概率定律")[
+#theorem(title: ctext("全概率定律"))[
   设$A_1, A_2, …, A_n$是样本空间 S 的分区，若$P(A_i) > 0$，$∀i$，有
 
   $ P(B) = sum_(i=1)^n P(B|A_i) P(A_i) $

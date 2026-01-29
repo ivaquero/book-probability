@@ -170,7 +170,7 @@ $
   caption: "正态分布",
 )
 
-#theorem(title: "68-95-99.7% 法则")[
+#theorem(title: ctext("68-95-99.7% 法则"))[
   若$X ∼ 𝒩(μ, σ)$，则
 
   $

@@ -9,7 +9,7 @@
 
 Cauchy-Schwarz 不等式是数学史上最著名的不等式之一。在概率论中，其形式如下
 
-#theorem(title: "Cauchy-Schwarz 不等式")[
+#theorem(title: ctext("Cauchy-Schwarz 不等式"))[
   对于具有有限方差的任意随机变量$X$和$Y$
   $ |𝔼[X Y]| ≤ sqrt(𝔼[X^2] 𝔼[Y^2]) $
 ]
@@ -20,7 +20,7 @@ Cauchy-Schwarz 不等式给出了联合期望的边际上限，在证明中应�
 
 Jensen 不等式用于判定数据集的凸性（convexity），在概率论中，其形式如下
 
-#theorem(title: "Jensen 不等式")[
+#theorem(title: ctext("Jensen 不等式"))[
   设$X$是一个随机变量。若$g$是
   - 凸函数，则$𝔼[g(X)] ≥ g(𝔼[X])$
   - 凹函数，则$𝔼[g(X)] ≤ g(𝔼[X])$
@@ -35,7 +35,7 @@ Jensen 不等式用于判定数据集的凸性（convexity），在概率论中�
 
 == 尾概率约束
 
-#theorem(title: "Markov 不等式")[
+#theorem(title: ctext("Markov 不等式"))[
   对任意随机变量$X$和常数$a > 0$，有
   $ P(|X| ≥ a) ≤ frac(E|X|, a) $
 ]
@@ -44,7 +44,7 @@ Jensen 不等式用于判定数据集的凸性（convexity），在概率论中�
 
 Markov 不等式是一个粗略的约束，它完全不需要对$X$作任何假设。下面 2 个不等式几乎不需要额外的工作就可以从 Markov 不等式中推导出来，它们通常可以给出比前者更好的约束。
 
-#theorem(title: "Chebyshev 不等式")[
+#theorem(title: ctext("Chebyshev 不等式"))[
   设随机变量$X$具有均值$μ$和方差$σ^2$，则对常数$a > 0$，有
   $ P(|X - μ| ≥ a) ≤ σ^2 / a^2 $
 ]
@@ -65,7 +65,7 @@ $ P(|X - μ| ≥ c σ) ≤ 1 / c^2 $
   - 所有数据，至少 #cheby(6) 落在均值的$6$个标准差范围内。
 ]
 
-#theorem(title: "Chernoff 不等式")[
+#theorem(title: ctext("Chernoff 不等式"))[
   设随机变量$X$，对常数$a > 0$和$t > 0$，有
   $ P(|X| ≥ a) ≤ frac(𝔼[e^(t X)], e^(t a)) $
 ]
@@ -98,12 +98,12 @@ $
 
 大数定律（law of large numbers，LLN）指出，随着$n$的增长，样本均值̄$macron(X_n)$会趋近于真实均值$μ$。LLN 有两个版本，即"强"（SLLN）和 "弱"（WLLN），它们对随机变量序列收敛到一个数的含义所使用的定义略有不同。
 
-#theorem(title: "强大数定律")[
+#theorem(title: ctext("强大数定律"))[
   又称 Kolmogorov 大数定律，其表明，样本均值̄$macron(X_n)$逐步收敛至真实均值$μ$的概率为$1$。即设$X_i$独立同分布，且期望值$𝔼[X_i] = μ, med k ∈ ℕ$，则
   $ P{lim_(n → ∞)(1 / n sum X_i) = μ} = 1 $
 ]
 
-#theorem(title: "弱大数定律")[
+#theorem(title: ctext("弱大数定律"))[
   又称 Wiener-Khinchin 大数定律，其表明，用算术均值来近似实际真值是合理的。即设$X_i$独立同分布，，且期望值$𝔼[X_i] = μ, med k ∈ ℕ$，则$∀ϵ ∈ ℕ$，存在
 
   $ P{|lim_(n → ∞)(1 / n sum X_i) - μ| ≤ ϵ} = 1 $
@@ -152,7 +152,7 @@ CLT 是一个渐近的结果，它告诉我们当$n → ∞$时的$macron(X_n)$�
 
 二项分布的正态近似是对 Poisson 近似的补充。Poisson 在$p$较小时效果最优，而正态近似在$n$较大、p 约为$1 / 2$时效果最优，因此$Y$的分布是对称的或接近对称。此结论可用以下定理证明。
 
-#theorem(title: "De Moivre-LaPlace 定理")[
+#theorem(title: ctext("De Moivre-LaPlace 定理"))[
   设随机变量$X_1, X_2, …, X_n limits(∼)^(i.i.d.) B(n, p)$，则$∀ϵ ∈ ℤ$，存在
 
   $

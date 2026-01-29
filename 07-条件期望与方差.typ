@@ -14,7 +14,7 @@
   该 PDF 是其条件 CDF $F(y|A) = P(Y ≤ y|A)$的导数。
 ]
 
-#theorem(title: "全期望定律")[
+#theorem(title: ctext("全期望定律"))[
   设$A_1, …, A_n$是样本空间的一个分区，$∀i, P(A_i) > 0$，并让$Y$成为该样本空间上的一个随机变量。则
   $ 𝔼[Y] = sum_(i=1)^n 𝔼[Y|A_i] P(A_i) $
 ]
@@ -33,7 +33,7 @@
   - 独立性：$X$和$Y$独立 ⇒ $𝔼[Y|X] = 𝔼[Y]$
 ]
 
-#theorem(title: "Adam's 定律")[
+#theorem(title: ctext("Adam's 定律"))[
   对任意随机变量$X$和$Y$，有
   $ 𝔼[𝔼[Y|X]] = 𝔼[Y] $
 ]
@@ -92,7 +92,7 @@ $
   $ "Var"(Y|X) = 𝔼[Y^2|X] − (𝔼[Y|X])^2 $
 ]
 
-#theorem(title: "Eve's 定律")[
+#theorem(title: ctext("Eve's 定律"))[
   对任意随机变量$X$和$Y$，有
   $ "Var"(Y) = 𝔼["Var"(Y|X)] + "Var"(𝔼[Y|X]) $
 
