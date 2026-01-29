@@ -81,7 +81,9 @@ Cartian 幂：$n$元集合有$2^(n)-1$个子集，其$k$阶 Cartian 幂有$n^(k)
 #theorem(title: ctext("二项式定理"))[
   对$k ≤ n$，有
 
-  $ binom(n, k) = frac(n(n-1)⋯(n-k+1), k!) = frac(n!, (n-k)!k!) $
+  $
+    binom(n, k) = frac(n(n-1)⋯(n-k+1), k!) = frac(n!, (n-k)!k!)
+  $
 
   对$k > n$，有$binom(n, k) = 0$。
 ]
@@ -105,7 +107,9 @@ $ binom(n, k) = binom(n, n-k) $
 
 - 案例2
 
-$ k binom(n, k) = n binom(n-1, k-1) $
+$
+  k binom(n, k) = n binom(n-1, k-1)
+$
 
 *证*：从$n$个队员中选出$k$个人去参赛，包括$1$队长，有两种方法
 
@@ -114,7 +118,9 @@ $ k binom(n, k) = n binom(n-1, k-1) $
 
 - 案例3
 
-$ binom(n, k) + binom(n, k-1) = binom(n+1, k) $
+$
+  binom(n, k) + binom(n, k-1) = binom(n+1, k)
+$
 
 *证*：从$n$个队员和$1$个队长选出$k$个人参赛，选出$k$个人参赛，需要考虑 2 种情况
 
@@ -203,7 +209,9 @@ $ <bayes>
 
 #theorem[
   对于概率为正的任何事件 A 和 B，有
-  $ P(A ∩ B) = P(B) P(A|B) = P(A) P(B|A) $
+  $
+    P(A ∩ B) = P(B) P(A|B) = P(A) P(B|A)
+  $
 ]
 
 #theorem[
@@ -231,7 +239,9 @@ $ <bayes>
 #theorem(title: ctext("全概率定律"))[
   设$A_1, A_2, …, A_n$是样本空间 S 的分区，若$P(A_i) > 0$，$∀i$，有
 
-  $ P(B) = sum_(i=1)^n P(B|A_i) P(A_i) $
+  $
+    P(B) = sum_(i=1)^n P(B|A_i) P(A_i)
+  $
 ]
 
 == 额外条件
@@ -318,4 +328,4 @@ $ sum_(i=1)^n i^3 = 6 binom(n+1, 4) + 6 binom(n+1, 3) + binom(n+1, 2) $
 
 - 案例3
 
-$ ∏_(i=1)^n(2i - 1) = frac((2n)!, 2^n⋅n!) $
+$ product_(i=1)^n(2i - 1) = frac((2n)!, 2^n⋅n!) $

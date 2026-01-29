@@ -208,7 +208,7 @@ $n$个对象中，每个对象都被独立归入$k$个类别之一。一个物�
 #theorem(title: ctext("多项式定理"))[
   $
     (sum_(i=1)^(m) a_(i))^(n) =
-    sum binom(n, k_1\, k_2\, ⋯\, k_m) ∏_(t=1)^(m) a_t^(k_t)( a_(i) ∈ ℝ,
+    sum binom(n, k_1\, k_2\, ⋯\, k_m) product_(t=1)^(m) a_t^(k_t)( a_(i) ∈ ℝ,
       ∀k_(i) ∈ ℕ, sum_(i=1)^(m) k_(i) = n )
   $
 ]
