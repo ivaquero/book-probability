@@ -79,7 +79,7 @@ Chernoff 不等式有两个非常好的特点：
 
 由 Markov 不等式
 
-$ P(|Z| > 3) ≤ frac(E|Z|, 3) = 1 / 3⋅2⋅1 / sqrt(2π) ≈ 0.27 $
+$ P(|Z| > 3) ≤ frac(E|Z|, 3) = 1 / 3⋅2⋅1 / sqrt(2pi) ≈ 0.27 $
 
 由 Chebyshev 不等式
 
@@ -156,7 +156,7 @@ CLT 是一个渐近的结果，它告诉我们当$n → ∞$时的$macron(X_n)$�
   设随机变量$X_1, X_2, …, X_n limits(∼)^(i.i.d.) B(n, p)$，则$∀ϵ ∈ ℤ$，存在
 
   $
-    lim_(n → ∞) P{frac(X_n - n p, sqrt(n p (1 - p))) ≤ x} = ∫_(-∞)^x 1 / sqrt(2π) e^(frac(-t^2, 2)) d t = Φ(x)
+    lim_(n → ∞) P{frac(X_n - n p, sqrt(n p (1 - p))) ≤ x} = ∫_(-∞)^x 1 / sqrt(2pi) e^(frac(-t^2, 2)) d t = Φ(x)
   $
 ]
 
@@ -239,7 +239,7 @@ $ frac((n-1) S_n^2, σ^2) ∼ χ^2_(n-1) $
   服从自由的为$n$的$t$分布，记作$T ∼ t_n$。其 PDF 为
 
   $
-    h(t) = frac(Gamma((n + 1)\/2), sqrt(π n) Gamma(n\/2))(1 + t^2\/n)^(-(n + 1)\/2)
+    h(t) = frac(Gamma((n + 1)\/2), sqrt(pi n) Gamma(n\/2))(1 + t^2\/n)^(-(n + 1)\/2)
   $
 ]
 

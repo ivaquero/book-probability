@@ -169,11 +169,11 @@ $ Γ(a) = ∫_0^∞ x^(a - 1) e^(-x) dd(x), quad ∀ a > 0 $
 ]
 
 #theorem(title: ctext("余元公式"))[
-  $ Γ(1 - a) Γ(a) = frac(π, sin (π x)) $
+  $ Γ(1 - a) Γ(a) = frac(pi, sin (pi x)) $
 ]
 
 #corollary[
-  $ Γ(1 / 2) = sqrt(π) $
+  $ Γ(1 / 2) = sqrt(pi) $
 ]
 
 == Gamma 分布 PDF
