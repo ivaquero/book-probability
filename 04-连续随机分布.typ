@@ -9,7 +9,7 @@
 ]
 
 #definition[
-  对于具有 CDF $F$的连续随机变量$X$，其的概率密度函数（PDF）是 CDF 的导数$f$，即$f(x) = F^′(x)$。
+  对于具有 CDF $F$的连续随机变量$X$，其的概率密度函数（PDF）是 CDF 的导数$f$，即$f(x) = F^'(x)$。
 ]
 
 #theorem[
