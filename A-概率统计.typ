@@ -28,7 +28,6 @@
     [$ln(a, b)$], [$frac(b - a, ln b - ln a)$], [],
   ),
   caption: "期望与方差",
-  kind: table,
 )
 
 == 特征函数
