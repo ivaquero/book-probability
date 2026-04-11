@@ -173,7 +173,7 @@ $
   $
 ]
 
-#tip-box()[
+#tip[
   Conditioning is the soul of statistics.
   #align("-- <Introduction to Probability>", right)
 ]
