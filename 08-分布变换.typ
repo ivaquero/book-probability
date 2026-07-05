@@ -112,11 +112,11 @@ Beta 分布 PDF 关于参数$(a, b)$有如下性质：
 
 #sgrid(
   figure(
-    image("images/distrs/distr_beta_pdf.png", width: 90%),
+    image("images/distrib/distrib_beta_pdf.png", width: 90%),
     caption: "Beta 分布 PDF",
   ),
   figure(
-    image("images/distrs/distr_beta_cdf.png", width: 90%),
+    image("images/distrib/distrib_beta_cdf.png", width: 90%),
     caption: "Beta 分布 CDF",
   ),
   columns: (200pt,) * 2,
@@ -185,11 +185,11 @@ $ Γ(a) = ∫_0^∞ x^(a - 1) e^(-x) dd(x), quad ∀ a > 0 $
 
 #sgrid(
   figure(
-    image("images/distrs/distr_gamma_pdf.png", width: 90%),
+    image("images/distrib/distrib_gamma_pdf.png", width: 90%),
     caption: "PDF",
   ),
   figure(
-    image("images/distrs/distr_gamma_cdf.png", width: 90%),
+    image("images/distrib/distrib_gamma_cdf.png", width: 90%),
     caption: " CDF",
   ),
   columns: (200pt,) * 2,

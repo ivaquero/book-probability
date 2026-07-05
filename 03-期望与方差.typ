@@ -105,7 +105,7 @@ $
 ]
 
 #figure(
-  image("images/distrs/distr_poisson_pmf.png", width: 40%),
+  image("images/distrib/distrib_poisson_pmf.png", width: 40%),
   caption: "Poisson 分布",
 )
 

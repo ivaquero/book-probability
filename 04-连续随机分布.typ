@@ -18,7 +18,7 @@
 ]
 
 #figure(
-  image("images/distrs/distr_norm_pdf_cdf.png", width: 60%),
+  image("images/distrib/distrib_norm_pdf_cdf.png", width: 60%),
   caption: "PDF-CDF",
 )
 
@@ -52,8 +52,8 @@
 ]
 
 #sgrid(
-  figure(image("images/distrs/distr_unif_pdf.png", width: 90%), caption: "PDF"),
-  figure(image("images/distrs/distr_unif_cdf.png", width: 90%), caption: "CDF"),
+  figure(image("images/distrib/distrib_unif_pdf.png", width: 90%), caption: "PDF"),
+  figure(image("images/distrib/distrib_unif_cdf.png", width: 90%), caption: "CDF"),
   columns: (200pt,) * 2,
   gutter: 2pt,
   caption: "均匀分布",
@@ -158,11 +158,11 @@ $
 
 #sgrid(
   figure(
-    image("images/distrs/distr_normal_pdf.png", width: 90%),
+    image("images/distrib/distrib_normal_pdf.png", width: 90%),
     caption: "PDF",
   ),
   figure(
-    image("images/distrs/distr_normal_cdf.png", width: 90%),
+    image("images/distrib/distrib_normal_cdf.png", width: 90%),
     caption: "CDF",
   ),
   columns: (200pt,) * 2,
@@ -181,7 +181,7 @@ $
 ]
 
 #figure(
-  image("images/distrs/distr_norm_3sigma.png", width: 40%),
+  image("images/distrib/distrib_norm_3sigma.png", width: 40%),
   caption: "68-95-99.7% 法则",
 )
 
@@ -211,8 +211,8 @@ $
 ]
 
 #sgrid(
-  figure(image("images/distrs/distr_expo_pdf.png", width: 90%), caption: "PDF"),
-  figure(image("images/distrs/distr_expo_cdf.png", width: 90%), caption: "CDF"),
+  figure(image("images/distrib/distrib_expo_pdf.png", width: 90%), caption: "PDF"),
+  figure(image("images/distrib/distrib_expo_cdf.png", width: 90%), caption: "CDF"),
   columns: (200pt,) * 2,
   gutter: 2pt,
   caption: "指数分布",

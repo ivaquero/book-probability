@@ -106,11 +106,11 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
 
 #sgrid(
   figure(
-    image("images/distrs/distr_bin_pmf.png", width: 90%),
+    image("images/distrib/distrib_bin_pmf.png", width: 90%),
     caption: "二项分布",
   ),
   figure(
-    image("images/distrs/distr_hgeom_pmf.png", width: 90%),
+    image("images/distrib/distrib_hgeom_pmf.png", width: 90%),
     caption: "超几何分布",
   ),
   columns: (200pt,) * 2,
@@ -142,11 +142,11 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
 
 #sgrid(
   figure(
-    image("images/distrs/distr_bern_pmf.png", width: 90%),
+    image("images/distrib/distrib_bern_pmf.png", width: 90%),
     caption: "Bernoulli 分布",
   ),
   figure(
-    image("images/distrs/distr_geom_pmf.png", width: 90%),
+    image("images/distrib/distrib_geom_pmf.png", width: 90%),
     caption: "几何分布",
   ),
   columns: (200pt,) * 2,
@@ -186,11 +186,11 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
 
 #sgrid(
   figure(
-    image("images/distrs/distr_nbin_pmf.png", width: 90%),
+    image("images/distrib/distrib_nbin_pmf.png", width: 90%),
     caption: "负二项分布",
   ),
   figure(
-    image("images/distrs/distr_nhgeom_pmf.png", width: 90%),
+    image("images/distrib/distrib_nhgeom_pmf.png", width: 90%),
     caption: "负超几何分布",
   ),
   columns: (200pt,) * 2,

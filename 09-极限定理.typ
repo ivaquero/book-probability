@@ -206,11 +206,11 @@ CLT 是一个渐近的结果，它告诉我们当$n → ∞$时的$macron(X_n)$�
 
 #sgrid(
   figure(
-    image("images/distrs/distr_chi2_pdf.png", width: 90%),
+    image("images/distrib/distrib_chi2_pdf.png", width: 90%),
     caption: "χ² 分布 PDF",
   ),
   figure(
-    image("images/distrs/distr_gamma_pdf.png", width: 90%),
+    image("images/distrib/distrib_gamma_pdf.png", width: 90%),
     caption: "Gamma 分布 PDF",
   ),
   columns: (200pt,) * 2,
@@ -254,11 +254,11 @@ $ frac((n-1) S_n^2, σ^2) ∼ χ^2_(n-1) $
 
 #sgrid(
   figure(
-    image("images/distrs/distr_t_pdf.png", width: 90%),
+    image("images/distrib/distrib_t_pdf.png", width: 90%),
     caption: "t 分布 PDF",
   ),
   figure(
-    image("images/distrs/distr_caushy_pdf.png", width: 90%),
+    image("images/distrib/distrib_caushy_pdf.png", width: 90%),
     caption: "Cauchy 分布 PDF",
   ),
   columns: (200pt,) * 2,
@@ -276,7 +276,7 @@ $F$分布用于比较两组正态分布数据的可变性，并确定方差分�
 ]
 
 #figure(
-  image("images/distrs/distr_f_pdf.png", width: 40%),
+  image("images/distrib/distrib_f_pdf.png", width: 40%),
   caption: "F 分布 PDF",
 )
 
