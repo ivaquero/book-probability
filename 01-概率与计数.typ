@@ -78,7 +78,7 @@ Cartian 幂：$n$元集合有$2^(n)-1$个子集，其$k$阶 Cartian 幂有$n^(k)
   考虑$n$个对象，并从它们中选出$k$个对象，每次选择后放回。则有$n^k$种可能的结果。
 ]
 
-#theorem(title: ctext("二项式定理"))[
+#theorem(ctext("二项式定理"))[
   对$k ≤ n$，有
 
   $
@@ -149,7 +149,7 @@ $
 - $A ⊆ B ⇒ P(A) < P(B)$
 - $P(A ∪ B) = P(A) + P(B) - P(A ∩ B)$
 
-#theorem(title: ctext("容斥原理"))[
+#theorem(ctext("容斥原理"))[
   $
     P(U_(i=1)^n A_i) = sum_i P(A_i)
     - sum_(i < j) P(A_i ∩ A_j) & + sum_(i < j < k) P(A_i ∩ A_j ∩ A_k)-⋯ \
@@ -180,7 +180,7 @@ $
 
 == 贝叶斯定理
 
-#theorem(title: ctext("贝叶斯定理"))[
+#theorem(ctext("贝叶斯定理"))[
   $
     P(A|B) = frac(P(B|A)P(A), P(B))
   $
@@ -230,13 +230,13 @@ $ <bayes>
   $ "odds"(A) = P(A) / P(overline(A)) $
 ]
 
-#theorem(title: ctext("贝叶斯定理的几率形式"))[
+#theorem(ctext("贝叶斯定理的几率形式"))[
   $
     frac(P(A|B), P(overline(A)|B)) = frac(P(B|A), P(B | overline(A))) frac(P(A), P(overline(A)))
   $
 ]
 
-#theorem(title: ctext("全概率定律"))[
+#theorem(ctext("全概率定律"))[
   设$A_1, A_2, …, A_n$是样本空间 S 的分区，若$P(A_i) > 0$，$∀i$，有
 
   $

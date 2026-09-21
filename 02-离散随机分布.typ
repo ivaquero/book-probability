@@ -26,7 +26,7 @@
   注意，若$x$是$X$的支撑集，则为正值，否则为$0$。
 ]
 
-#theorem(title: ctext("有效 PMFs"))[
+#theorem(ctext("有效 PMFs"))[
   设离散随机变量$X$的支撑集为$x_1, x_2$，$X$的 PMF $p_X$必须满足以下两个条件：
 
   + 非负的：$p_X (x) > O "if" x = 2; "for some" j, "else" p_X (x) = 0$
