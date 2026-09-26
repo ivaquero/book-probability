@@ -14,7 +14,7 @@
 
 == 集合运算律
 
-#block(height: 10em, columns()[
+#columns()[
   - 交换律
     #list([$A ∪ B = B ∪ A$], [$A ∩ B = B ∩ A$], indent: 0.1em)
   - 结合律
@@ -23,6 +23,8 @@
       [$A ∩ (B ∩ C) = (A ∩ B) ∩ C$],
       indent: 0.1em,
     )
+  #colbreak()
+
   - 分配律
     #list(
       [$A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)$],
@@ -35,11 +37,11 @@
       [$overline(A ∩ B) = overline(A) ∪ overline(B)$],
       indent: 0.1em,
     )
-])
+]
 
 == 转化与组合
 
-#block(height: 7em, columns()[
+#columns()[
   - 转换
     #list(
       [$A + B = A ∪ B$],
@@ -47,9 +49,11 @@
       [$A (B-C) = A B - A C$],
       indent: 0.1em,
     )
+  #colbreak()
+
   - Cartian 积
     #list([$A × B = \{(x, y) |x ∈ A ∧ y ∈ B\}$], [$A × ∅ = ∅$], indent: 0.1em)
-])
+]
 
 Cartian 幂：$n$元集合有$2^(n)-1$个子集，其$k$阶 Cartian 幂有$n^(k)$个元素。
 
