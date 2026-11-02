@@ -9,7 +9,7 @@
   $ 𝔼[Y|A] = sum_y y P(Y=y|A) $
 
   若$Y$是连续随机变量，且有 PDF $f$，则
-  $ 𝔼[Y|A] = ∫_(-∞)^(∞) y f(y|A) d y $
+  $ 𝔼[Y|A] = ∫_(-∞)^(∞) y f(y|A) dd(y) $
 
   该 PDF 是其条件 CDF $F(y|A) = P(Y ≤ y|A)$的导数。
 ]

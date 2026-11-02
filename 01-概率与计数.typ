@@ -10,7 +10,7 @@
 - 子集：对$2$个集合$A$与集合$B$，若$A$中任一元素都是$B$的元素，则称$A$为$B$的子集，记作$A ⊆ B$。
 - 交集：对$2$个集合$A$与集合$B$，属于$A$且属于$B$的元素构成的集合称$A$与$B$的交集，记作$A ∩ B$。
 - 并集：对$2$个集合$A$与集合$B$，属于$A$或属于$B$的元素构成的集合称$A$与$B$的并集，记作$A ∪ B$。
-- 补集：对集合$S$和，$S$中不属于其子集$A$的元素构成的集合，称为$A$在$S$中的补集，记作$overline(A)$。
+- 补集：对集合$S$及其子集$A$，$S$中不属于$A$的元素构成的集合，称为$A$在$S$中的补集，记作$overline(A)$。
 
 == 集合运算律
 
@@ -31,7 +31,7 @@
       [$A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)$],
       indent: 0.1em,
     )
-  - De Morgen 律
+  - De Morgan 律
     #list(
       [$overline(A ∪ B) = overline(A) ∩ overline(B)$],
       [$overline(A ∩ B) = overline(A) ∪ overline(B)$],
@@ -45,17 +45,17 @@
   - 转换
     #list(
       [$A + B = A ∪ B$],
-      [$A - B = A B^∁$],
+      [$A - B = A overline(B)$],
       [$A (B-C) = A B - A C$],
       indent: 0.1em,
     )
   #colbreak()
 
-  - Cartian 积
+  - Cartesian 积
     #list([$A × B = \{(x, y) |x ∈ A ∧ y ∈ B\}$], [$A × ∅ = ∅$], indent: 0.1em)
 ]
 
-Cartian 幂：$n$元集合有$2^(n)-1$个子集，其$k$阶 Cartian 幂有$n^(k)$个元素。
+Cartesian 幂：$n$元集合有$2^(n)$个子集，其$k$阶 Cartesian 幂有$n^(k)$个元素。
 
 = 朴素概率
 <朴素概率>
@@ -143,14 +143,14 @@ $
 
   + P(∅) = 0
   + P(S) = 1
-  + 若$A_1, A_2, …$为独立（互斥）事件，则
+  + 若$A_1, A_2, …$为两两互斥事件，则
   $ P(U_(j=1)^(∞) A_j) = sum_(j=1)^(∞) P(A_j) $
 ]
 
 == 概率的性质
 
 - $P(overline(A)) = 1 - P(A)$
-- $A ⊆ B ⇒ P(A) < P(B)$
+- $A ⊆ B ⇒ P(A) ≤ P(B)$
 - $P(A ∪ B) = P(A) + P(B) - P(A ∩ B)$
 
 #theorem(ctext("容斥原理"))[
@@ -209,7 +209,7 @@ $ <bayes>
 + 原因的解释力，即该原因可能导致被观测到的现象的概率
 + 原因的可能性，即该原因在所以潜在原因中的占比，也就是先验
 
-关于 贝叶斯定理的更详细解释和应用，请参考第 11 章及其后续章节。
+关于 贝叶斯定理的更详细解释和应用，请参考后续章节。
 
 #theorem[
   对于概率为正的任何事件 A 和 B，有
@@ -251,13 +251,13 @@ $ <bayes>
 == 额外条件
 
 #theorem[
-  假设$P(A ∩ E) > 0$且$P(B ∩ E)$，则
+  假设$P(A ∩ E) > 0$且$P(B ∩ E) > 0$，则
 
   $ P(A|B, E) = frac(P(B|A, E)P(A|E), P(B|E)) $
 ]
 
 #theorem[
-  设$A_1, A_2, …, A_n$是样本空间 S 的分区，假设$P(A_i ∩ E)$，$∀i$，有
+  设$A_1, A_2, …, A_n$是样本空间 S 的分区，假设$P(A_i ∩ E) > 0$，$∀i$，有
 
   $ P(B|E) = sum_(i=1)^n P(B|A_i, E) P(A_i|E) $
 ]
@@ -265,7 +265,7 @@ $ <bayes>
 == 独立性
 
 #theorem[
-  独立 ⇔ $P(A B) = P(A) P(B) ⇒ A ∩ B = ∅$
+  事件 A 和 B 相互独立 ⇔ $P(A ∩ B) = P(A) P(B)$
 ]
 
 #corollary[
@@ -306,15 +306,15 @@ $ <bayes>
 
 - 案例1
 
-$ sum_(i=0)^n binom(n, k)^2 = binom(2n, n) $
+$ sum_(k=0)^n binom(n, k)^2 = binom(2n, n) $
 
 - 案例2
 
-$ sum_(i=1)^n k binom(n, k)^2 = n binom(2n-1, n-1) $
+$ sum_(k=1)^n k binom(n, k)^2 = n binom(2n-1, n-1) $
 
 - 案例3（曲棍球棒恒等式）
 
-$ sum_(i=k)^(n-k) binom(i, k) = binom(n+1, k+1) $
+$ sum_(i=k)^n binom(i, k) = binom(n+1, k+1) $
 
 - 案例4（Vandermonde's 恒等式）
 
