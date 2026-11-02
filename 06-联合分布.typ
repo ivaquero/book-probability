@@ -138,12 +138,12 @@ $X$的边际 PMF 是单独观察$X$时，$X$的 PMF。为了将联合 PMF 转换
 首先由 LOTUS，得
 
 $
-  𝔼[|X - Y|] = ∫_(-∞)^(∞)∫_(-∞)^(∞)(|x - y|) 1 / sqrt(2pi) e^(-x^2 / 2) 1 / sqrt(2pi) e^(= y^2 / 2) dd(x, y)
+  𝔼[|X - Y|] = ∫_(-∞)^(∞)∫_(-∞)^(∞)(|x - y|) 1 / sqrt(2pi) e^(-x^2 / 2) 1 / sqrt(2pi) e^(- y^2 / 2) dd(x, y)
 $
 
 又由矩母函数的结论，正态分布的和或差仍服从正态分布，可知$X - Y ∼ 𝒩(0, 2)$，于是有$X - Y = sqrt(2)Z$，得
 
-$ 𝔼[Z] = sqrt(frac(2, pi)) ⇒ 𝔼[|X - Y|] = 2 / sqrt(pi) $
+$ 𝔼[|Z|] = sqrt(frac(2, pi)) ⇒ 𝔼[|X - Y|] = 2 / sqrt(pi) $
 
 = 协方差和相关系数
 <协方差和相关系数>
@@ -167,7 +167,7 @@ $ 𝔼[Z] = sqrt(frac(2, pi)) ⇒ 𝔼[|X - Y|] = 2 / sqrt(pi) $
   - $"Cov"(a X, Y) = a "Cov"(X, Y)$
   - $"Cov"(X + Y, Z) = "Cov"(X, Z) + "Cov"(Y, Z)$
   - $"Cov"(X + Y, Z + W) = "Cov"(X, Z) + "Cov"(X, W) + "Cov"(Y, Z) + "Cov"(Y, W)$
-  - $"Var"(X + Y) = "Var"(X) + "Var"(Y) + "Cov"(X, Y)$
+  - $"Var"(X + Y) = "Var"(X) + "Var"(Y) + 2 "Cov"(X, Y)$
 ]
 
 #warning[
@@ -177,7 +177,7 @@ $ 𝔼[Z] = sqrt(frac(2, pi)) ⇒ 𝔼[|X - Y|] = 2 / sqrt(pi) $
 
 #definition[
   随机变量$X$和$Y$的相关系数为
-  $ "Corr"(X, Y) = frac("Cov"(X, Y), sqrt("Var"(X)) "Var"(Y)) $
+  $ "Corr"(X, Y) = frac("Cov"(X, Y), sqrt("Var"(X) "Var"(Y))) $
 ]
 
 相关系数的取值范围是$[-1, 1]$，$1$代表完全正相关，$-1$表示完全负相关，$0$表示完全不相关，其不受$X$和$Y$标度的影响。

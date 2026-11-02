@@ -29,7 +29,7 @@
 #theorem(ctext("有效 PMFs"))[
   设离散随机变量$X$的支撑集为$x_1, x_2$，$X$的 PMF $p_X$必须满足以下两个条件：
 
-  + 非负的：$p_X (x) > O "if" x = 2; "for some" j, "else" p_X (x) = 0$
+  + 非负的：$p_X (x) ≥ 0 quad "for all" x$，且当$x$属于$X$的支撑集时$p_X (x) > 0$，否则$p_X (x) = 0$
   + 和为$1$：$sum_(j=1)^(∞) p_X (x_j) = 1$
 ]
 
@@ -159,7 +159,7 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
 #definition[
   将几何分布试验重复$n$次得到的概率分布服从负二项分布。可以理解成，已知合格率为$p$时，进行$n$次实验，抽到合格品$r$个的概率分布。记作$X ∼ "NBin"(p)$，其得名于负二项式系数
 
-  $ (1 - x)^(-n) = sum_0^(∞) binom(i + n + 1, n + 1) x^n $
+  $ (1 - x)^(-n) = sum_(i=0)^(∞) binom(n + i - 1, i) x^i $
 ]
 
 #theorem[

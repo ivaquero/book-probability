@@ -28,16 +28,16 @@ Jensen 不等式用于判定数据集的凸性（convexity），在概率论中�
 ]
 
 #corollary[
-  - $E|X| ≥ |E X|$
-  - $𝔼[1 / X] ≥ 1 / (E X) med med ∀X > 0$
-  - $𝔼[log(X)] ≤ log(E X) med med ∀X < 0$
+  - $𝔼[|X|] ≥ |𝔼[X]|$
+  - $𝔼[1 / X] ≥ 1 / (𝔼[X]), quad ∀X > 0$
+  - $𝔼[log(X)] ≤ log(𝔼[X]), quad ∀X > 0$
 ]
 
 == 尾概率约束
 
 #theorem(ctext("Markov 不等式"))[
   对任意随机变量$X$和常数$a > 0$，有
-  $ P(|X| ≥ a) ≤ frac(E|X|, a) $
+  $ P(|X| ≥ a) ≤ frac(𝔼[|X|], a) $
 ]
 
 为了直观起见，令$X$成为从人口中随机抽取的个体的收入。取$a = 2𝔼[X]$，Markov 不等式表示为$P(X ≥ 2𝔼[X]) ≤ 1 / 2$，即不可能有一半以上的人的收入至少是平均收入的 2 倍。将 2 替换成其他正整数，不等式也成立。
@@ -79,7 +79,7 @@ Chernoff 不等式有两个非常好的特点：
 
 由 Markov 不等式
 
-$ P(|Z| > 3) ≤ frac(E|Z|, 3) = 1 / 3⋅2⋅1 / sqrt(2pi) ≈ 0.27 $
+$ P(|Z| > 3) ≤ frac(𝔼[|Z|], 3) = 1 / 3⋅2⋅1 / sqrt(2pi) ≈ 0.27 $
 
 由 Chebyshev 不等式
 
@@ -96,17 +96,17 @@ $
 = 大数定律
 <大数定律>
 
-大数定律（law of large numbers，LLN）指出，随着$n$的增长，样本均值̄$macron(X_n)$会趋近于真实均值$μ$。LLN 有两个版本，即"强"（SLLN）和 "弱"（WLLN），它们对随机变量序列收敛到一个数的含义所使用的定义略有不同。
+大数定律（law of large numbers，LLN）指出，随着$n$的增长，样本均值$macron(X_n)$会趋近于真实均值$μ$。LLN 有两个版本，即"强"（SLLN）和 "弱"（WLLN），它们对随机变量序列收敛到一个数的含义所使用的定义略有不同。
 
 #theorem(ctext("强大数定律"))[
-  又称 Kolmogorov 大数定律，其表明，样本均值̄$macron(X_n)$逐步收敛至真实均值$μ$的概率为$1$。即设$X_i$独立同分布，且期望值$𝔼[X_i] = μ, med k ∈ ℕ$，则
+  又称 Kolmogorov 大数定律，其表明，样本均值$macron(X_n)$逐步收敛至真实均值$μ$的概率为$1$。即设$X_i$独立同分布，且期望值$𝔼[X_i] = μ, quad ∀i ∈ ℕ$，则
   $ P{lim_(n → ∞)(1 / n sum X_i) = μ} = 1 $
 ]
 
 #theorem(ctext("弱大数定律"))[
-  又称 Wiener-Khinchin 大数定律，其表明，用算术均值来近似实际真值是合理的。即设$X_i$独立同分布，，且期望值$𝔼[X_i] = μ, med k ∈ ℕ$，则$∀ϵ ∈ ℕ$，存在
+  又称 Wiener-Khinchin 大数定律，其表明，用算术均值来近似实际真值是合理的。即设$X_i$独立同分布，且期望值$𝔼[X_i] = μ, quad ∀i ∈ ℕ$，则$∀ϵ > 0$，有
 
-  $ P{|lim_(n → ∞)(1 / n sum X_i) - μ| ≤ ϵ} = 1 $
+  $ lim_(n → ∞) P{|(1 / n sum X_i) - μ| < ϵ} = 1 $
 ]
 
 #figure(
@@ -127,36 +127,36 @@ $ R_n (x) = sum_(j=1)^n I (X_j ≤ x) $
   $ hat(F)_n (x) = frac(R_n (x), n) $
 ]
 
-经验 CDF 常用于非参数统计中，它试图在不对随机样本的分布族做出强假设的情况下理解该样本。例如，与其假设$X_1, …, X_n ∼ 𝒩(μ, σ_2)$，非参数方法允许$X_1, …, X_n ∼ F$的任意 CDF $F$，然后使用经验 CDF 作为$F$的近似值。LLN 确保我们在收集越来越多的样本时，这个近似值在极限范围内是有效的：在每个$x$值上，经验 CDF 都会向真实 CDF 收敛。
+经验 CDF 常用于非参数统计中，它试图在不对随机样本的分布族做出强假设的情况下理解该样本。例如，与其假设$X_1, …, X_n ∼ 𝒩(μ, σ^2)$，非参数方法允许$X_1, …, X_n ∼ F$的任意 CDF $F$，然后使用经验 CDF 作为$F$的近似值。LLN 确保我们在收集越来越多的样本时，这个近似值在极限范围内是有效的：在每个$x$值上，经验 CDF 都会向真实 CDF 收敛。
 
 = 中心极限定理
 <中心极限定理>
 
-中心极限定理（central limit theorem，CLT）指出，对于大$n$，标准化后̄$macron(X_n)$的分布接近标准正态分布$𝒩(0, 1)$。
+中心极限定理（central limit theorem，CLT）指出，对于大$n$，标准化后$macron(X_n)$的分布接近标准正态分布$𝒩(0, 1)$。
 
 #theorem[
   当$n → ∞$，有
   $ sqrt(n)(frac(macron(X_n) - μ, σ)) → 𝒩(0, 1) $
   从而有
-  $ macron(X_n) ∼ 𝒩(μ, σ_2 / n) $
+  $ macron(X_n) ∼ 𝒩(μ, σ^2 / n) $
 ]
 
 CLT 是一个渐近的结果，它告诉我们当$n → ∞$时的$macron(X_n)$的极限分布，也提出了当$n$较大但有限时的$macron(X_n)$分布的近似值。
 
 #corollary[
   当$n → ∞$，
-  - $Y ∼ "Bin"(n, p) → (n p, n p(1 − p))$
+  - $Y ∼ "Bin"(n, p) → 𝒩(n p, n p(1 − p))$
   - $Y ∼ "Pois"(λ) → 𝒩(λ, λ)$
   - $Y ∼ "Gamma"(n, λ) → 𝒩(n / λ, n / λ^2)$
 ]
 
 二项分布的正态近似是对 Poisson 近似的补充。Poisson 在$p$较小时效果最优，而正态近似在$n$较大、p 约为$1 / 2$时效果最优，因此$Y$的分布是对称的或接近对称。此结论可用以下定理证明。
 
-#theorem(ctext("De Moivre-LaPlace 定理"))[
-  设随机变量$X_1, X_2, …, X_n limits(∼)^(i.i.d.) B(n, p)$，则$∀ϵ ∈ ℤ$，存在
+#theorem(ctext("De Moivre-Laplace 定理"))[
+  设随机变量$X_1, X_2, …, X_n limits(∼)^("i.i.d.") "Bern"(p)$，记$S_n = sum_(i=1)^n X_i ∼ "Bin"(n, p)$，则对任意实数$x$，有
 
   $
-    lim_(n → ∞) P{frac(X_n - n p, sqrt(n p (1 - p))) ≤ x} = ∫_(-∞)^x 1 / sqrt(2pi) e^(frac(-t^2, 2)) d t = Φ(x)
+    lim_(n → ∞) P{frac(S_n - n p, sqrt(n p (1 - p))) ≤ x} = ∫_(-∞)^x 1 / sqrt(2pi) e^(frac(-t^2, 2)) dd(t) = Φ(x)
   $
 ]
 
@@ -165,17 +165,15 @@ CLT 是一个渐近的结果，它告诉我们当$n → ∞$时的$macron(X_n)$�
 三种收敛对应 LLN 和 CLT 的三种收敛方式，前者关心的是均值，后者不仅关心均值，还关心方差，即分布。矩在某种程度上统一了两者。当$n$越来越大时，正态分布就变得越来越尖，趋于$∞$时，收敛为没有宽度的但无限高的的样子，有意思的是，其曲线下的面积却等于$1$，被称为 Dirac-δ 函数，点电荷和点质量等点源和脉冲具有类似的性质。
 
 #definition[
-  当$n → ∞$，在函数$P$下，$X_n$不收敛到$x_0$的概率为$0$，即
-  $ lim_(n → ∞) P(|X_n - x_0| ≥ ϵ) = 0 $
-  则称$X_n$几乎确信收敛（convergence in affirmation）于$x_0$，记为$X_n → x_0$。
+  设${X_n}$是随机变量序列，若$P(lim_(n → ∞) X_n = x_0) = 1$，即$X_n$逐步收敛至$x_0$的概率为$1$，则称$X_n$几乎必然收敛（almost sure convergence）于$x_0$，记为$X_n limits(→)^(a.s.) x_0$。
 
-  SLLN 就是几乎确信收敛。
+  SLLN 就是几乎必然收敛。
 ]
 
 #definition[
-  设$X_2, X_2, …$是随机变量序列，若$∀ϵ$，有
-  $ lim_(n → ∞) P(|X_n - x_0| > ϵ)=0 $
-  则称$X_n$依概率收敛（almost sure convergence）于$x_0$，记为$X_n limits(→)^p x_0$。
+  设${X_n}$是随机变量序列，若$∀ϵ > 0$，有
+  $ lim_(n → ∞) P(|X_n - x_0| ≥ ϵ) = 0 $
+  则称$X_n$依概率收敛（convergence in probability）于$x_0$，记为$X_n limits(→)^p x_0$。
 
   WLLN 就是依概率收敛。
 ]
@@ -200,7 +198,7 @@ CLT 是一个渐近的结果，它告诉我们当$n → ∞$时的$macron(X_n)$�
 
 #definition[
   设$V = Z_1^2 + … + Z_n^2$，其中，$Z_1, …, Z_n$独立同分布于$𝒩(0, 1)$，则$V$服从$n$自由度的奇平方分布，记作$V ∼ χ_n^2$，对$x > 0$，其 PDF 为
-  $ frac(1, Gamma(n\/2)⋅2^(n\/2)) e^(-x\/2)⋅x^((n\/2 - 1)) $
+  $ frac(1, Γ(n\/2)⋅2^(n\/2)) e^(-x\/2)⋅x^((n\/2 - 1)) $
   不难发现，$χ_n^2$分布是 Gamma 分布的一种特例，即$"Gamma"(n\/2, 1\/2)$。
 ]
 
@@ -236,10 +234,10 @@ $ frac((n-1) S_n^2, σ^2) ∼ χ^2_(n-1) $
     T = frac(Z, sqrt(V\/n)) = frac(macron(X) - μ, S\/sqrt(n)) = frac(macron(X) - μ, "sem")
   $
 
-  服从自由的为$n$的$t$分布，记作$T ∼ t_n$。其 PDF 为
+  服从自由度为$n$的$t$分布，记作$T ∼ t_n$。其 PDF 为
 
   $
-    h(t) = frac(Gamma((n + 1)\/2), sqrt(pi n) Gamma(n\/2))(1 + t^2\/n)^(-(n + 1)\/2)
+    h(t) = frac(Γ((n + 1)\/2), sqrt(pi n) Γ(n\/2))(1 + t^2\/n)^(-(n + 1)\/2)
   $
 ]
 
@@ -294,17 +292,17 @@ $F$分布用于比较两组正态分布数据的可变性，并确定方差分�
 ]
 
 #theorem[
-  当$X_i ∼ 𝒩(μ_1, σ_1^2)$，$Y_j ∼ 𝒩(μ_2, σ_2^2)$，且$X$和$Y$独立，则
+  当$X_i ∼ 𝒩(μ_1, σ_1^2)$，$Y_j ∼ 𝒩(μ_2, σ_2^2)$，且$X$和$Y$独立，$S_X^2$、$S_Y^2$为两组样本方差，则
   $
-    sum frac((Y_j - macron(Y)), σ_2^2 (m - 1)) \/ frac((X_i - macron(X)), σ_1^2 (n-1)) ∼ F(m - 1, n-1)
+    frac(S_Y^2 / σ_2^2, S_X^2 / σ_1^2) ∼ F(m - 1, n - 1)
   $
 ]
 
 #theorem[
-  当$σ_1^2 = σ_2^2$，则
+  当$σ_1^2 = σ_2^2$，记合并样本方差 $S_p^2 = frac(1, n + m - 2)(sum_(i=1)^n (X_i - macron(X))^2 + sum_(j=1)^m (Y_j - macron(Y))^2)$，则
 
   $
-    sum [(macron(X)- macron(Y)) - (μ_1 - μ_2)]⋅sqrt((n + m - 2)\/(1 / n + 1 / m)) / sqrt(sum (X_i - macron(X)) + sum (Y_i - macron(Y))) ∼ t (n + m - 2)
+    frac((macron(X) - macron(Y)) - (μ_1 - μ_2), sqrt(S_p^2 (1 / n + 1 / m))) ∼ t(n + m - 2)
   $
 ]
 

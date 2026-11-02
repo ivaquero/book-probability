@@ -13,8 +13,8 @@
 #definition[
   设$𝑿 = X_1, …, X_n$是一个连续随机向量，其联合 PDF 为 $f_𝑿$。令$g: A_0 → B_0$是一个可逆函数，其中，$A_0$和$B_0$是$ℝ^n$的开子集，$A_0$包含$𝑿$的支撑集$B_0$是$g$的范围。令$𝒀 = g(𝑿)$，继而令$𝒚 = g(𝒙)$，因此也有$𝑿 = g^(-1)(𝒀)$和$𝒙 = g^(-1)(𝒚)$。
 
-  假设所有偏导数$pdv(x_i, y_j)$都存在且连续，则可以组成 Jacobian 矩阵，同时假设该矩阵的行列式永不为$0$，则$Y$的联合 PDF 为
-  $ f_𝒀 (𝒚) = f_𝑿 (g^(-1)(𝒚))⋅ norm(pdv(𝒙, 𝒚)) "for" 𝒚 ∈ B_0 and "else" 0 $
+  假设所有偏导数$pdv(x_i, y_j)$都存在且连续，则可以组成 Jacobian 矩阵$J = (pdv(x_i, y_j))$，同时假设其行列式$det J$永不为$0$，则$Y$的联合 PDF 为
+  $ f_𝒀 (𝒚) = f_𝑿 (g^(-1)(𝒚))⋅ abs(det J) "for" 𝒚 ∈ B_0 and "else" 0 $
 
 ]
 
@@ -30,7 +30,7 @@
              & = sum_y P(X = t - y) P(Y=y)
   $
 
-  若$X$和$Y$是离散的，则$T$的 PDF 为
+  若$X$和$Y$是连续的，则$T$的 PDF 为
 
   $
     f_T (t) & = ∫_(-∞)^(∞) f_Y (t - x) f_X (x) dd(x) \
@@ -135,15 +135,15 @@ Beta 分布 PDF 关于参数$(a, b)$有如下性质：
 Beta-二项分布是一个离散分布，一般用于描述当每次试验的成功概率$p$是未知时，$n$次 Bernoulli 试验的成功次数$y$，并设服从参数$a$和$b$的 Beta 分布。即为了找到结果$y$的概率，对$p$的所有可能的（和连续的）值进行平均。
 
 $
-  "Beta-Bin"(y|n, a, b) = ∫_0^1 "Bin"(y|p, n) "Beta"(p|a, b) dd(p), med med ∀x ∈ ℕ
+  "Beta-Bin"(y|n, a, b) = ∫_0^1 "Bin"(y|p, n) "Beta"(p|a, b) dd(p), quad ∀y ∈ ℕ
 $
 
 即
 
 $
   P(X = k) & = frac(1, β(a, b)) ∫_0^1 binom(n, k) p^k(1 - p)^(n - k) ⋅ p^(a - 1)(1 - p)^(b - 1) dd(p) \
-           & = frac(binom(n, k), β(a, b)) ∫_0^1 p^(a + k - 1)(1 - p)^(b + n - k - 1) d p \
-           & = vec(n, k) frac(β(a + k, b + n - k), β(a, b))
+           & = frac(binom(n, k), β(a, b)) ∫_0^1 p^(a + k - 1)(1 - p)^(b + n - k - 1) dd(p) \
+           & = binom(n, k) frac(β(a + k, b + n - k), β(a, b))
 $
 
 由上，Beta-二项分布可被认为是一个连续的混合模型，可被直接使用，也可被拆分使用。
@@ -168,7 +168,7 @@ $ Γ(a) = ∫_0^∞ x^(a - 1) e^(-x) dd(x), quad ∀ a > 0 $
 ]
 
 #theorem(ctext("余元公式"))[
-  $ Γ(1 - a) Γ(a) = frac(pi, sin (pi x)) $
+  $ Γ(1 - a) Γ(a) = frac(pi, sin (pi a)) $
 ]
 
 #corollary[
@@ -179,7 +179,7 @@ $ Γ(a) = ∫_0^∞ x^(a - 1) e^(-x) dd(x), quad ∀ a > 0 $
 
 #definition[
   若随机变量$X$服从参数为$(a, λ)$的 Gamma 分布，记作$X ∼ "Gamma"(a, λ)$，则对其 PDF 为
-  $ f(x) = frac(1, Γ(a))(λ x)^a frac(1, x) e^(-λ x), med med x > 0 $
+  $ f(x) = frac(1, Γ(a))(λ x)^a frac(1, x) e^(-λ x), quad x > 0 $
   其中，$a$为形状参数，$1 / λ$为标度参数（scale parameter）。
 ]
 
@@ -199,12 +199,12 @@ $ Γ(a) = ∫_0^∞ x^(a - 1) e^(-x) dd(x), quad ∀ a > 0 $
 
 Gamma 分布可以衍生出多个其他连续分布
 
-- $"Gamma"(1, λ) = "Exp"(λ)$
-- $"Gamma"(n / 2, 2) = χ^2(n)$
-- $"Gamma"(1 / 2, 2) ∼ 𝒩(0, 1)$
+- $"Gamma"(1, λ) = "Expo"(λ)$
+- $"Gamma"(n / 2, 1 / 2) = χ^2(n)$
+- $χ^2(1) = "Gamma"(1 / 2, 1 / 2)$，即$Z ∼ 𝒩(0, 1)$时$Z^2$所服从的分布
 
 #theorem(ctext("Gamma-Poisson 共轭"))[
-  若先验分布服从 Gamma 分布，即$λ ∼ "Gamma"(r_0, b_0)$，且数据条件服从 Poisson 分布，即$Y|λ ∼ "Poisson"(λ t)$，则后验仍服从 Gamma 分布
+  若先验分布服从 Gamma 分布，即$λ ∼ "Gamma"(r_0, b_0)$，且数据条件服从 Poisson 分布，即$Y|λ ∼ "Pois"(λ t)$，则后验仍服从 Gamma 分布
   $ λ|Y ∼ "Gamma"(r_0 + y, b_0 + t) $
   此时，称 Gamma 分布是 Poisson 分布的共轭先验。$Y$的边际分布称 Gamma-Poisson 分布。
 ]
@@ -226,7 +226,7 @@ $ β(a, b) = ∫_0^1 x^(a - 1)(1 - x)^(b - 1) = frac(Γ(a)Γ(b), Γ(a + b)) $
   若随机变量$X$和$Y$服从等速率$λ$的 Gamma 分布，则
   $ X + Y ∼ "Gamma"(a_1 + a_2, λ) $
   且
-  $ frac(X, X + Y) ∼ "Beta"(a_1 + 1, a_2) $
+  $ frac(X, X + Y) ∼ "Beta"(a_1, a_2) $
 ]
 
 = 顺序统计量
@@ -251,7 +251,7 @@ $ β(a, b) = ∫_0^1 x^(a - 1)(1 - x)^(b - 1) = frac(Γ(a)Γ(b), Γ(a + b)) $
   $
 ]
 
-假设随机变量$U_1, …, U_n$独立同分布与$"Unif"(0, 1)$，则对$0 ≤ x ≤ 1$，有$f(x) = 1$且$F(x) = x$，于是$U_((j))$的 PDF 为
+假设随机变量$U_1, …, U_n$独立同分布于$"Unif"(0, 1)$，则对$0 ≤ x ≤ 1$，有$f(x) = 1$且$F(x) = x$，于是$U_((j))$的 PDF 为
 
 $ f_U_((j))(x) = n binom(n - 1, j - 1) x^(j - 1)(1 - x)^(n - j) $
 
