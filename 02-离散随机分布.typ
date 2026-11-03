@@ -74,10 +74,10 @@
 
 == 二项分布
 
-将 Bernoulli 试验重复$n$次得到的分布称二项分布（binomial distribution），其得名于二项式系数，记作$X ∼ "Bin"(p)$。
+将 Bernoulli 试验重复$n$次得到的分布称二项分布（binomial distribution），其得名于二项式系数，记作$X ∼ "Bin"(n, p)$。
 
 #theorem[
-  二项式分布的 PMF 为
+  二项分布的 PMF 为
 
   $ P(X = k) = binom(n, k) p^k (1 - p)^(n - k), k ∈ ℕ $
 
@@ -172,7 +172,7 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
 
 == 负超几何分布
 
-一批产品共$N$个，其中含次品$M$个。随机抽取$n$个，含$r$个合格品的概率分布，此时其 PMF 为
+一批产品共$N$个，其中含次品$M$个。随机抽取$n$个，含$r$个合格品的概率服从负超几何分布。
 
 负二项分布是几何分布的有放回重复版本，而负超几何分布是几何分布的不放回重复版本，记作$X ∼ "NHGeom"(p)$。
 
@@ -240,18 +240,14 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
   对于任何随机变量$X$和$Z$，当把函数$P(X=x|Z=z)$看作固定$z$的$x$的函数时，就称其为给定$Z=z$的$X$的条件 PMF。
 ]
 
-#warning[
-  随机变量独立 ⇏ 独立
-]
-
 == 同分布
 
 #definition[
-  独立的随机变量若具有同一种分布，则称其独立同分布，记作$i.i.d$。
+  独立的随机变量若具有同一种分布，则称其独立同分布，记作$"i.i.d."$。
 ]
 
 #theorem[
-  若随机向量$X ∼ "Bin"(n,p)$，则$X$的分量$X_i limits(∼)^(i.i.d) "Bern(p)"$。
+  若随机向量$X ∼ "Bin"(n, p)$，则$X$的分量$X_i limits(∼)^("i.i.d.") "Bern"(p)$。
 ]
 
 #theorem[
@@ -270,5 +266,5 @@ $ P(X = m) = binom(N - M, n - m) binom(M, m) / binom(N, n) $
   caption: "主要离散分布关系",
 )
 
-+ $n p ≥ 5$ ⇒ $B(n, p) → 𝒩(n p, n p(1 - p))$
-+ $N → ∞$ ⇒ $H(N, m, n) → B(n, p)$（当$n$固定，则$p=M / N$固定）
++ $n p ≥ 5$ ⇒ $("Bin")(n, p) → 𝒩(n p, n p(1 - p))$
++ $N → ∞$ ⇒ $("HGeom")(N, M, n) → "Bin"(n, p)$（当$n$固定，则$p=M / N$固定）
